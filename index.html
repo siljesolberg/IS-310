@@ -48,20 +48,43 @@
     box-shadow: 0 6px 18px rgba(31, 64, 153, 0.15);
   }
 
-  .top-nav ul{
+  .top-nav .nav-inner{
     max-width: 1040px;
     margin: 0 auto;
-    padding: 16px 28px;
+    padding: 18px 28px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+  }
+
+  .top-nav .brand{
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    color: #ffffff;
+    text-decoration: none;
+    font-family: 'Space Mono', monospace;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    font-weight: 700;
+  }
+
+  .top-nav ul{
+    margin: 0;
+    padding: 0;
     list-style: none;
     display: flex;
     align-items: center;
-    gap: 18px;
+    justify-content: flex-end;
+    gap: 38px;
     flex-wrap: wrap;
   }
 
   .top-nav a{
     font-family: 'Space Mono', monospace;
-    font-size: 0.82rem;
+    font-size: 0.92rem;
     text-transform: uppercase;
     letter-spacing: 0.08em;
     text-decoration: none;
@@ -326,13 +349,20 @@
   }
 
   @media (max-width: 560px){
+    .nav-inner{
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
     .top-nav ul{
-      gap: 12px;
-      padding: 12px 0;
+      width: 100%;
+      justify-content: flex-start;
+      gap: 14px;
+      padding: 0;
     }
 
     .top-nav a{
-      font-size: 0.74rem;
+      font-size: 0.8rem;
       letter-spacing: 0.06em;
     }
 
@@ -360,13 +390,19 @@
 </head>
 <body>
 
+
+<!-- meny -->
   <nav class="top-nav" aria-label="Hovedmeny">
-    <ul>
-      <li><a href="#om">Om prosjektet</a></li>
-      <li><a href="#medlemmer">Medlemmer</a></li>
-      <li><a href="#fremdrift">Fremdrift</a></li>
-      <li><a href="#kontakt">Kontakt</a></li>
-    </ul>
+    <div class="nav-inner">
+      <a href="#top" class="brand" aria-label="IS-310">
+        <span>IS-310</span>
+      </a>
+      <ul>
+        <li><a href="#om">Om gruppen</a></li>
+        <li><a href="#medlemmer">Medlemmer</a></li>
+        <li><a href="#kontakt">Kontakt</a></li>
+      </ul>
+    </div>
   </nav>
 
 <div class="wrap">
@@ -374,8 +410,8 @@
   <!-- Overskrift -->
   <header class="cover">
     <h1 class="title">Gruppe 11</h1>
-    <p class="subtitle">Denne siden samler hvem vi er, hva vi jobber med, og hvor langt vi har kommet.</p>
   </header>
+
 
   <!-- Gruppemedlemmer -->
   <section id="medlemmer">
