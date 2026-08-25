@@ -193,6 +193,36 @@
     align-items: center;
     justify-content: center;
     margin-bottom: 20px;
+    overflow: hidden;
+  }
+
+  .card .avatar.avatar-initials{
+    font-size: 1.6rem;
+    font-weight: 700;
+    background: linear-gradient(135deg, var(--primary), var(--line-strong));
+    letter-spacing: 0.04em;
+  }
+
+  .member-card {
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+  }
+
+  .member-card:hover {
+    transform: translateY(-3px);
+    border-color: var(--line-strong);
+    box-shadow: 0 10px 22px rgba(15, 23, 42, 0.08);
+  }
+
+  .member-card:focus-visible {
+    outline: 2px solid var(--primary);
+    outline-offset: 4px;
+  }
+
+  .avatar-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
   }
 
   .card h3{
@@ -216,48 +246,30 @@
     margin: 0;
   }
 
-  .card .contact-links{
-    display: flex;
-    justify-content: center;
-    gap: 10px;
-    margin-top: 18px;
-    width: 100%;
-  }
-
-  .card .contact-links a{
+  .card .read-more{
+    margin-top: auto;
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    width: 36px;
-    height: 36px;
+    width: 62%;
+    padding: 11px 14px;
+    border: 1px solid var(--line-strong);
     border-radius: 999px;
     background: var(--primary);
     color: #ffffff;
+    font-family: 'Space Mono', monospace;
+    font-size: 0.7rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
     text-decoration: none;
     transition: opacity 0.2s ease, transform 0.2s ease;
+    cursor: pointer;
+    margin-top: 24px;
   }
 
-  .card .contact-links a:hover{
-    opacity: 0.88;
+  .card .read-more:hover{
+    opacity: 0.92;
     transform: translateY(-1px);
-  }
-
-  .card .contact-links svg{
-    width: 18px;
-    height: 18px;
-    display: block;
-  }
-
-  .card .contact-links .linkedin-icon{
-    fill: currentColor;
-  }
-
-  .card .contact-links .mail-icon{
-    fill: none;
-    stroke: currentColor;
-    stroke-width: 1.8;
-    stroke-linecap: round;
-    stroke-linejoin: round;
   }
 
   .timeline{
@@ -388,7 +400,7 @@
   }
 </style>
 </head>
-<body>
+<body id="top">
 
 
 <!-- meny -->
@@ -400,7 +412,7 @@
       <ul>
         <li><a href="#om">Om gruppen</a></li>
         <li><a href="#medlemmer">Medlemmer</a></li>
-        <li><a href="#kontakt">Kontakt</a></li>
+        <li><a href="#kontakt">Ta kontakt</a></li>
       </ul>
     </div>
   </nav>
@@ -408,125 +420,130 @@
 <div class="wrap">
 
   <!-- Overskrift -->
-  <header class="cover">
+ <header class="cover" id="om">
     <h1 class="title">Gruppe 11</h1>
-  </header>
+   <p class="eyebrow">Om gruppen</p>
+   <p class="subtitle">Vi er gruppe 11 og jobber sammen for å utvikle brukervennlige og gjennomtenkte løsninger! Vi kombinerer ulike ferdigheter og perspektiver, og legger vekt på godt samarbeid, kreativitet og problemløsning.</p>
+ </header>
 
 
-  <!-- Gruppemedlemmer -->
-  <section id="medlemmer">
-    <p class="section-label">Gruppemedlemmer</p>
-    <h2>Hvem er vi?</h2>
-    <div class="members-grid">
+ <!-- Gruppemedlemmer -->
+ <section id="medlemmer">
+   <p class="section-label">Gruppemedlemmer</p>
+   <h2>Hvem er vi?</h2>
+   <div class="members-grid">
 
-      <div class="card">
-        <div class="avatar">SS</div>
-        <h3>Silje Solberg</h3>
-        <p class="role">rolle</p>
-        <p class="note">notat: hvem er jeg?</p>
-        <div class="contact-links">
-          <a href="https://www.linkedin.com/in/silje-solberg" aria-label="LinkedIn for Silje Solberg" target="_blank" rel="noreferrer">
-            <svg class="linkedin-icon" viewBox="0 0 24 24" aria-hidden="true"><text x="50%" y="56%" text-anchor="middle" dominant-baseline="middle" font-size="11" font-weight="700" font-family="Arial, sans-serif">in</text></svg>
-          </a>
-          <a href="mailto:silje@example.com" aria-label="E-post for Silje Solberg">
-            <svg class="mail-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 7.5h18v9H3zM3 8l9 6 9-6"/></svg>
-          </a>
-        </div>
-      </div>
+    <!-- ida -->
+     <div class="card member-card" tabindex="0" role="button" aria-label="Gå til Idas profil" data-url="medlem-ida.html">
+       <div class="avatar avatar-image">
+         <img src="images/idaelise.jpg" alt="Bilde av Ida Elise Jamissen">
+       </div>
+       <h3>Ida Elise Jamissen</h3>
+       <p class="role">Gruppeleder</p>
+       <p class="note">Fokus på struktur, samarbeide og å få ting til å skje.</p>
+       <button class="read-more" type="button" data-url="medlem-ida.html">Les mer</button>
+     </div>
 
-      <div class="card">
-        <div class="avatar">IEJ</div>
-        <h3>Ida Elise Jamissen</h3>
-        <p class="role">rolle</p>
-        <p class="note">notat: hvem er jeg?</p>
-        <div class="contact-links">
-          <a href="https://www.linkedin.com/in/ida-elise-jamissen" aria-label="LinkedIn for Ida Elise Jamissen" target="_blank" rel="noreferrer">
-            <svg class="linkedin-icon" viewBox="0 0 24 24" aria-hidden="true"><text x="50%" y="56%" text-anchor="middle" dominant-baseline="middle" font-size="11" font-weight="700" font-family="Arial, sans-serif">in</text></svg>
-          </a>
-          <a href="mailto:ida@example.com" aria-label="E-post for Ida Elise Jamissen">
-            <svg class="mail-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 7.5h18v9H3zM3 8l9 6 9-6"/></svg>
-          </a>
-        </div>
-      </div>
+     <!-- sivert -->
+     <div class="card member-card" tabindex="0" role="button" aria-label="Gå til Siverts profil" data-url="medlem-sivert.html">
+       <div class="avatar avatar-image">
+         <img src="images/sivertd 2.jpg" alt="Bilde av Sivert Dørum">
+       </div>
+       <h3>Sivert Dørum</h3>
+       <p class="role">Vara-leder</p>
+       <p class="note">Liker å finne praktiske løsninger og holde prosjektet i gang.</p>
+       <button class="read-more" type="button" data-url="medlem-sivert.html">Les mer</button>
+     </div>
 
-      <div class="card">
-        <div class="avatar">JC</div>
-        <h3>Jihyung Choi</h3>
-        <p class="role">rolle</p>
-        <p class="note">notat: hvem er jeg?</p>
-        <div class="contact-links">
-          <a href="https://www.linkedin.com/in/jihyung-choi" aria-label="LinkedIn for Jihyung Choi" target="_blank" rel="noreferrer">
-            <svg class="linkedin-icon" viewBox="0 0 24 24" aria-hidden="true"><text x="50%" y="56%" text-anchor="middle" dominant-baseline="middle" font-size="11" font-weight="700" font-family="Arial, sans-serif">in</text></svg>
-          </a>
-          <a href="mailto:jihyung@example.com" aria-label="E-post for Jihyung Choi">
-            <svg class="mail-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 7.5h18v9H3zM3 8l9 6 9-6"/></svg>
-          </a>
-        </div>
-      </div>
+     <!-- Silje -->
+     <div class="card member-card" tabindex="0" role="button" aria-label="Gå til Siljes profil" data-url="medlem-silje.html">
+       <div class="avatar avatar-image">
+         <img src="images/silje 2.JPG" alt="Bilde av Silje Solberg">
+       </div>
+       <h3>Silje Solberg</h3>
+       <p class="role">Frontend / brukeropplevelse</p>
+       <p class="note">Er opptatt av tydelig design, god struktur og flotte detaljer.</p>
+       <button class="read-more" type="button" data-url="medlem-silje.html">Les mer</button>
+     </div>
 
-      <div class="card">
-        <div class="avatar">SD</div>
-        <h3>Sivert Dørum</h3>
-        <p class="role">rolle</p>
-        <p class="note">notat: hvem er jeg?</p>
-        <div class="contact-links">
-          <a href="https://www.linkedin.com/in/sivert-dorum" aria-label="LinkedIn for Sivert Dørum" target="_blank" rel="noreferrer">
-            <svg class="linkedin-icon" viewBox="0 0 24 24" aria-hidden="true"><text x="50%" y="56%" text-anchor="middle" dominant-baseline="middle" font-size="11" font-weight="700" font-family="Arial, sans-serif">in</text></svg>
-          </a>
-          <a href="mailto:sivert@example.com" aria-label="E-post for Sivert Dørum">
-            <svg class="mail-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 7.5h18v9H3zM3 8l9 6 9-6"/></svg>
-          </a>
-        </div>
-      </div>
+     <!-- Ji -->
+     <div class="card member-card" tabindex="0" role="button" aria-label="Gå til Jihyungs profil" data-url="medlem-jihyung.html">
+       <div class="avatar avatar-image">
+         <img src="images/Ji.jpg" alt="Bilde av Jihyung Choi">
+       </div>
+       <h3>Jihyung Choi</h3>
+       <p class="role">Full-stack</p>
+       <p class="note">Bruker kreativitet og teknisk innsikt for å bygge gode løsninger.</p>
+       <button class="read-more" type="button" data-url="medlem-jihyung.html">Les mer</button>
+     </div>
 
-      <div class="card">
-        <div class="avatar">FE</div>
-        <h3>Filip Edvardsen</h3>
-        <p class="role">rolle</p>
-        <p class="note">notat: hvem er jeg?</p>
-        <div class="contact-links">
-          <a href="https://www.linkedin.com/in/filip-edvardsen" aria-label="LinkedIn for Filip Edvardsen" target="_blank" rel="noreferrer">
-            <svg class="linkedin-icon" viewBox="0 0 24 24" aria-hidden="true"><text x="50%" y="56%" text-anchor="middle" dominant-baseline="middle" font-size="11" font-weight="700" font-family="Arial, sans-serif">in</text></svg>
-          </a>
-          <a href="mailto:filip@example.com" aria-label="E-post for Filip Edvardsen">
-            <svg class="mail-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 7.5h18v9H3zM3 8l9 6 9-6"/></svg>
-          </a>
-        </div>
-      </div>
+     <!-- filip -->
+     <div class="card member-card" tabindex="0" role="button" aria-label="Gå til Filips profil" data-url="medlem-filip.html">
+       <div class="avatar avatar-image">
+         <img src="images/filip.jpg" alt="Bilde av Filip Edvardsen">
+       </div>
+       <h3>Filip Edvardsen</h3>
+       <p class="role">Backend / Database</p>
+       <p class="note">Ser etter sammenhenger og sørger for at ideene blir klare og brukbare.</p>
+       <button class="read-more" type="button" data-url="medlem-filip.html">Les mer</button>
+     </div>
 
-      <div class="card">
-        <div class="avatar">ØB</div>
-        <h3>Øyvind Birkeland</h3>
-        <p class="role">rolle</p>
-        <p class="note">notat: hvem er jeg?</p>
-        <div class="contact-links">
-          <a href="https://www.linkedin.com/in/oyvind-birkeland" aria-label="LinkedIn for Øyvind Birkeland" target="_blank" rel="noreferrer">
-            <svg class="linkedin-icon" viewBox="0 0 24 24" aria-hidden="true"><text x="50%" y="56%" text-anchor="middle" dominant-baseline="middle" font-size="11" font-weight="700" font-family="Arial, sans-serif">in</text></svg>
-          </a>
-          <a href="mailto:oyvind@example.com" aria-label="E-post for Øyvind Birkeland">
-            <svg class="mail-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 7.5h18v9H3zM3 8l9 6 9-6"/></svg>
-          </a>
-        </div>
-      </div>
+     <!-- øyvind -->
+     <div class="card member-card" tabindex="0" role="button" aria-label="Gå til Øyvinds profil" data-url="medlem-oyvind.html">
+       <div class="avatar avatar-image">
+         <img src="images/øyvind.jpg" alt="Bilde av Øyvind Birkeland">
+       </div>
+       <h3>Øyvind Birkeland</h3>
+       <p class="role">Dokumentasjon</p>
+       <p class="note">Er opptatt av god kvalitet, presisjon og at alt fungerer som det skal.</p>
+       <button class="read-more" type="button" data-url="medlem-oyvind.html">Les mer</button>
+     </div>
 
-    </div>
-  </section>
+   </div>
+ </section>
 
-<!-- Hvem er vi som gruppe -->
-  <section class="about" id="om">
-    <h2>Om gruppen</h2>
-    <p>[Skriv en kort beskrivelse av gruppen her — hvem vi er, hva vi gjør, og hvorfor vi er her.]</p>
-  </section>
+ <script>
+   const cards = document.querySelectorAll('.member-card');
+   cards.forEach((card) => {
+     const navigate = () => {
+       const url = card.dataset.url;
+       if (url) window.location.href = url;
+     };
 
+     card.addEventListener('click', (event) => {
+       if (event.target.closest('.read-more')) return;
+       navigate();
+     });
+
+     card.addEventListener('keydown', (event) => {
+       if (event.key === 'Enter' || event.key === ' ') {
+         event.preventDefault();
+         navigate();
+       }
+     });
+   });
+
+   document.querySelectorAll('.read-more').forEach((button) => {
+     button.addEventListener('click', (event) => {
+       event.stopPropagation();
+       const url = button.dataset.url;
+       if (url) window.location.href = url;
+     });
+   });
+ </script>
+
+
+<!-- Ta Kontakt  -->
   <footer id="kontakt">
-    <p class="section-label">Kontakt</p>
+    <p class="section-label">Ta Kontakt</p>
+    <p>Har du spørsmål eller ønsker en prat? Ikke nøl med å ta kontakt med oss!</p>
     <div class="contact-line">
-      <span>Silje Solberg — <a href="mailto:siljeso@uia.no">silje@example.com</a></span>
-      <span>Ida Elise Jamissen — <a href="mailto:idaej@uia.no">ida@example.com</a></span>
-      <span>Jihyung Choi — <a href="mailto:jihyung@uia.no">jihyung@example.com</a></span>
-      <span>Sivert Dørum — <a href="mailto:sivert@uia.no">sivert@example.com</a></span>
-      <span>Filip Edvardsen — <a href="mailto:filip@uia.no">filip@example.com</a></span>
-      <span>Øyvind Birkeland — <a href="mailto:øyvind@uia.no">øyvind@example.com</a></span>
+      <span>Ida Elise Jamissen — <a href="mailto:iejamissen@uia.no">iejamissen@uia.no</a></span>
+      <span>Sivert Dørum — <a href="mailto:sivertdorum@gmail.com">sivertdorum@gmail.com</a></span>
+      <span>Silje Solberg — <a href="mailto:siljeso@uia.no">siljeso@uia.no</a></span>
+      <span>Jihyung Choi — <a href="mailto:jihyungc@uia.no">jihyungc@uia.no</a></span>
+      <span>Filip Edvardsen — <a href="mailto:filiped@uia.no">filiped@uia.no</a></span>
+      <span>Øyvind Birkeland — <a href="mailto:oyvindbirkeland0@gmail.com">oyvindbirkeland0@gmail.com</a></span>
     </div>
   </footer>
 
