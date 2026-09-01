@@ -177,7 +177,7 @@
     min-height: 0;
     display: grid;
     grid-template-columns: 230px minmax(0, 1fr);
-    align-items: center;
+    align-items: start;
     gap: 34px;
     text-align: left;
   }
@@ -253,22 +253,14 @@
     font-size: 1.08rem;
     color: var(--text-muted);
     margin: 0 0 16px;
-    max-width: 620px;
   }
 
   .card .facts{
-    width: fit-content;
-    max-width: 620px;
+    width: 100%;
     margin: 0 0 24px;
     padding-left: 20px;
     color: var(--text-muted);
     text-align: left;
-  }
-
-  .member-details{
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
   }
 
   .card .facts li + li{
@@ -276,41 +268,37 @@
   }
 
   .card .profile-actions{
-    margin-top: 16px;
+    margin-top: 0;
     display: inline-flex;
     align-items: center;
-    justify-content: center;
-    gap: 10px;
+    justify-content: flex-start;
   }
 
-  .card .social-link{
+  .card .linkedin{
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    width: 42px;
-    height: 42px;
+    gap: 8px;
+    padding: 11px 14px;
     border-radius: 999px;
+    background: #0a66c2;
     color: #ffffff;
+    font-family: 'Space Mono', monospace;
+    font-size: 0.7rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
     text-decoration: none;
     transition: opacity 0.2s ease, transform 0.2s ease;
   }
 
-  .card .social-link:hover{
+  .card .linkedin:hover{
     opacity: 0.92;
     transform: translateY(-1px);
   }
 
-  .card .social-link svg{
-    width: 20px;
-    height: 20px;
-  }
-
-  .card .linkedin{
-    background: #0a66c2;
-  }
-
-  .card .github{
-    background: #24292f;
+  .card .linkedin svg{
+    width: 16px;
+    height: 16px;
   }
 
   .timeline{
@@ -370,7 +358,7 @@
   }
 
   footer{
-    padding: 60px 0 0;
+    padding: 60px 0 80px;
     border-top: 1px solid var(--line-strong);
   }
 
@@ -386,62 +374,6 @@
   footer .contact-line a{
     text-decoration: none;
     border-bottom: 1px solid var(--line-strong);
-  }
-
-  footer .primary-contact{
-    max-width: 520px;
-    margin: 18px 0 24px;
-    padding: 20px 22px;
-    border: 1px solid var(--line-strong);
-    border-radius: 12px;
-    background: #f8fbff;
-  }
-
-  footer .primary-contact p{
-    margin: 0;
-    color: var(--text-muted);
-  }
-
-  footer .primary-contact strong{
-    display: block;
-    margin-bottom: 4px;
-    color: var(--text);
-    font-size: 1.08rem;
-  }
-
-  footer .footer-bottom{
-    width: 100vw;
-    margin: 44px 0 0 calc(50% - 50vw);
-    padding: 24px max(28px, calc((100vw - 1040px) / 2 + 28px));
-    background: var(--primary);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 18px;
-    flex-wrap: wrap;
-    text-align: center;
-    color: rgba(255, 255, 255, 0.82);
-    font-family: 'Space Mono', monospace;
-    font-size: 0.78rem;
-    text-transform: uppercase;
-    letter-spacing: 0.07em;
-  }
-
-  footer .footer-links{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 16px;
-  }
-
-  footer .footer-links a{
-    color: #ffffff;
-    text-decoration: none;
-    border-bottom: 1px solid transparent;
-  }
-
-  footer .footer-links a:hover{
-    border-bottom-color: rgba(255, 255, 255, 0.7);
   }
 
   footer .fine{
@@ -502,7 +434,6 @@
     }
 
     .tl-item{ grid-template-columns: 72px 16px 1fr; }
-
   }
 
   @media (prefers-reduced-motion: reduce){
@@ -530,9 +461,6 @@
         <li><a href="#kontakt">Ta kontakt</a></li>
       </ul>
     </div>
-
-    </body>
-    </html>
   </nav>
 
 <div class="wrap">
@@ -559,28 +487,20 @@
          </div>
          <h3>Ida Elise Jamissen</h3>
          <p class="role">Gruppeleder</p>
-         <div class="profile-actions">
-           <a class="social-link linkedin" href="https://www.linkedin.com/in/ida-elise-jamissen/" target="_blank" rel="noreferrer" aria-label="LinkedIn for Ida Elise Jamissen">
-             <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.94 8.5A1.56 1.56 0 1 1 6.93 5.4a1.56 1.56 0 0 1 .01 3.1ZM5.5 9.78h2.9v8.72H5.5V9.78Zm4.82 0h2.77v1.18h.04c.39-.73 1.33-1.5 2.73-1.5 2.92 0 3.46 1.92 3.46 4.42v6.62h-2.9v-6.2c0-1.48-.03-3.38-2.06-3.38-2.07 0-2.39 1.61-2.39 3.27v6.31h-2.9V9.78Z" fill="currentColor"/></svg>
-           </a>
-           <a class="social-link github" href="https://github.com/idaelisej" target="_blank" rel="noreferrer" aria-label="GitHub for Ida Elise Jamissen">
-             <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.58.1.79-.25.79-.56v-2.15c-3.2.7-3.88-1.36-3.88-1.36-.52-1.33-1.28-1.68-1.28-1.68-1.05-.72.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.76 2.7 1.25 3.36.96.1-.75.4-1.25.73-1.54-2.55-.29-5.24-1.28-5.24-5.68 0-1.25.45-2.28 1.19-3.08-.12-.29-.52-1.46.11-3.04 0 0 .97-.31 3.17 1.18a10.9 10.9 0 0 1 5.77 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.58.23 2.75.11 3.04.74.8 1.19 1.83 1.19 3.08 0 4.42-2.69 5.38-5.25 5.67.41.36.78 1.06.78 2.14v3.15c0 .31.21.67.8.56A11.52 11.52 0 0 0 23.5 12C23.5 5.65 18.35.5 12 .5Z" fill="currentColor"/></svg>
-           </a>
-         </div>
        </div>
        <div class="member-details">
-         <p class="bio">Ida er 22 år og kommer fra Sarpsborg. I bachelorprosjektet har hun rollen som gruppeleder. Hun har tidligere hatt rollen som gruppeleder i flere av prosjektene i løpet av studiet, og trives godt med å ha ansvar for struktur, planlegging og fremdrift. Som gruppeleder er hun opptatt av å skape et godt miljø i gruppa og sørge for at alle jobber mot et felles mål. 
-Gjennom studiet har hun også fått erfaring med ulike sider av IT-faget, og hennes største interesser er interaksjonsdesign og databasesystemer. Hun syntes det er interessant å se hvordan brukeropplevelse og tekniske løsninger kan kombineres for å utvikle systemer som funker godt teknisk men som også oppleves brukervennlige. 
-</p>
+         <p class="bio">Jeg er en strukturert og engasjert person som liker å få ting til å skje. Jeg trives best når vi samarbeider, deler ansvar og jobber mot et tydelig mål.</p>
          <ul class="facts">
-           <li>Erfaring: Studentmedarbeider ved UiA Karriere, studentmentor og læringsassistent ved institutt for informasjonssystemer, kaptein og trener for KSI Topaz cheerleading. Tidligere leder for KSI Topaz cheerleading. 
-</li>
-           <li>Valgfag: TFL119, IT og Samfunnsendringer. IS-214 Information Systems Security. IS-309, Videregående Databasesystemer. DAT104, Multimediedesign, TFL129 Innføringsemne for Studentmentorer. 
-
-</li>
-           <li>Ferdigheter: PostgreSQL, C#, HTML, UX-design, Python, koordinering av team, kommunikasjon.
-</li>
+           <li>Fokuserer på struktur, planlegging og samarbeid.</li>
+           <li>Tar ansvar for at prosjektet holder tempo og retning.</li>
+           <li>Er glad i å skape gode arbeidsrutiner i grupper.</li>
          </ul>
+         <div class="profile-actions">
+           <a class="linkedin" href="https://www.linkedin.com/in/ida-elise-jamissen/" target="_blank" rel="noreferrer" aria-label="LinkedIn for Ida Elise Jamissen">
+             <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.94 8.5A1.56 1.56 0 1 1 6.93 5.4a1.56 1.56 0 0 1 .01 3.1ZM5.5 9.78h2.9v8.72H5.5V9.78Zm4.82 0h2.77v1.18h.04c.39-.73 1.33-1.5 2.73-1.5 2.92 0 3.46 1.92 3.46 4.42v6.62h-2.9v-6.2c0-1.48-.03-3.38-2.06-3.38-2.07 0-2.39 1.61-2.39 3.27v6.31h-2.9V9.78Z" fill="currentColor"/></svg>
+             LinkedIn
+           </a>
+         </div>
        </div>
      </article>
 
@@ -592,28 +512,20 @@ Gjennom studiet har hun også fått erfaring med ulike sider av IT-faget, og hen
          </div>
          <h3>Sivert Dørum</h3>
          <p class="role">Vara-leder</p>
-         <div class="profile-actions">
-           <a class="social-link linkedin" href="https://www.linkedin.com/in/sivert-d%C3%B8rum-015b0140a/" target="_blank" rel="noreferrer" aria-label="LinkedIn for Sivert Dørum">
-             <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.94 8.5A1.56 1.56 0 1 1 6.93 5.4a1.56 1.56 0 0 1 .01 3.1ZM5.5 9.78h2.9v8.72H5.5V9.78Zm4.82 0h2.77v1.18h.04c.39-.73 1.33-1.5 2.73-1.5 2.92 0 3.46 1.92 3.46 4.42v6.62h-2.9v-6.2c0-1.48-.03-3.38-2.06-3.38-2.07 0-2.39 1.61-2.39 3.27v6.31h-2.9V9.78Z" fill="currentColor"/></svg>
-           </a>
-           <a class="social-link github" href="https://github.com/sivertdorum" target="_blank" rel="noreferrer" aria-label="GitHub for Sivert Dørum">
-             <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.58.1.79-.25.79-.56v-2.15c-3.2.7-3.88-1.36-3.88-1.36-.52-1.33-1.28-1.68-1.28-1.68-1.05-.72.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.76 2.7 1.25 3.36.96.1-.75.4-1.25.73-1.54-2.55-.29-5.24-1.28-5.24-5.68 0-1.25.45-2.28 1.19-3.08-.12-.29-.52-1.46.11-3.04 0 0 .97-.31 3.17 1.18a10.9 10.9 0 0 1 5.77 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.58.23 2.75.11 3.04.74.8 1.19 1.83 1.19 3.08 0 4.42-2.69 5.38-5.25 5.67.41.36.78 1.06.78 2.14v3.15c0 .31.21.67.8.56A11.52 11.52 0 0 0 23.5 12C23.5 5.65 18.35.5 12 .5Z" fill="currentColor"/></svg>
-           </a>
-         </div>
        </div>
        <div class="member-details">
-         <p class="bio">Sivert er 21 år, fra stavanger og opptatt av utvikling, problemløsning og godt samarbeid. Som vara-leder 
-          liker han å ta ansvar, skape struktur og bidra til at arbeidet i gruppen går fremover. 
-          Han er løsningsorientert og trives godt med å samarbeide med andre for å finne gode 
-          løsninger. Gjennom utveksling i USA har Sivert fått erfaring med å tilpasse seg nye 
-          miljøer og arbeidsmåter, samtidig som praksis hos IK Start har gitt ham praktisk erfaring 
-          med utvikling i et reelt prosjekt. Sivert mener at tydelig kommunikasjon, struktur og 
-          godt samarbeid er viktige faktorer for å gjennomføre et godt prosjekt.</p>
+         <p class="bio">Jeg liker å løse praktiske problemer og sørge for at arbeidet går framover uten unødvendige stopp. Jeg er glad i å bidra med struktur og et godt tempo i gruppen.</p>
          <ul class="facts">
-           <li>Teknologi: C#, HTML, CSS, Python, SQL, Git, GitHub, Docker.</li>
-           <li>Erfaring: Utveksling i på University of Nebraska at Omaha, praktikant hos Start med utvikling av ernæringsapplikasjon, vara-leder og erfaring fra utviklingsprosjekter i team.</li>
-           <li>Egenskaper:  Strukturert, løsningsorientert, samarbeidsvillig, ansvarsfull og god på kommunikasjon.</li>
+           <li>Bidrar med oppfølging og praktisk gjennomføring.</li>
+           <li>Fokuserer på at oppgaver blir løst effektivt.</li>
+           <li>Er god til å holde gruppen orientert mot målet.</li>
          </ul>
+         <div class="profile-actions">
+           <a class="linkedin" href="https://www.linkedin.com/in/sivert-d%C3%B8rum-015b0140a/" target="_blank" rel="noreferrer" aria-label="LinkedIn for Sivert Dørum">
+             <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.94 8.5A1.56 1.56 0 1 1 6.93 5.4a1.56 1.56 0 0 1 .01 3.1ZM5.5 9.78h2.9v8.72H5.5V9.78Zm4.82 0h2.77v1.18h.04c.39-.73 1.33-1.5 2.73-1.5 2.92 0 3.46 1.92 3.46 4.42v6.62h-2.9v-6.2c0-1.48-.03-3.38-2.06-3.38-2.07 0-2.39 1.61-2.39 3.27v6.31h-2.9V9.78Z" fill="currentColor"/></svg>
+             LinkedIn
+           </a>
+         </div>
        </div>
      </article>
 
@@ -624,23 +536,21 @@ Gjennom studiet har hun også fått erfaring med ulike sider av IT-faget, og hen
            <img src="images/silje 2.JPG" alt="Bilde av Silje Solberg">
          </div>
          <h3>Silje Solberg</h3>
-         <p class="role">Frontend / brukeropplevelse</p>
-         <div class="profile-actions">
-           <a class="social-link linkedin" href="https://www.linkedin.com/in/silje-solberg" target="_blank" rel="noreferrer" aria-label="LinkedIn for Silje Solberg">
-             <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.94 8.5A1.56 1.56 0 1 1 6.93 5.4a1.56 1.56 0 0 1 .01 3.1ZM5.5 9.78h2.9v8.72H5.5V9.78Zm4.82 0h2.77v1.18h.04c.39-.73 1.33-1.5 2.73-1.5 2.92 0 3.46 1.92 3.46 4.42v6.62h-2.9v-6.2c0-1.48-.03-3.38-2.06-3.38-2.07 0-2.39 1.61-2.39 3.27v6.31h-2.9V9.78Z" fill="currentColor"/></svg>
-           </a>
-           <a class="social-link github" href="https://github.com/siljesolberg" target="_blank" rel="noreferrer" aria-label="GitHub for Silje Solberg">
-             <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.58.1.79-.25.79-.56v-2.15c-3.2.7-3.88-1.36-3.88-1.36-.52-1.33-1.28-1.68-1.28-1.68-1.05-.72.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.76 2.7 1.25 3.36.96.1-.75.4-1.25.73-1.54-2.55-.29-5.24-1.28-5.24-5.68 0-1.25.45-2.28 1.19-3.08-.12-.29-.52-1.46.11-3.04 0 0 .97-.31 3.17 1.18a10.9 10.9 0 0 1 5.77 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.58.23 2.75.11 3.04.74.8 1.19 1.83 1.19 3.08 0 4.42-2.69 5.38-5.25 5.67.41.36.78 1.06.78 2.14v3.15c0 .31.21.67.8.56A11.52 11.52 0 0 0 23.5 12C23.5 5.65 18.35.5 12 .5Z" fill="currentColor"/></svg>
-           </a>
-         </div>
+         <p class="role">Design / brukeropplevelse</p>
        </div>
        <div class="member-details">
-         <p class="bio">Silje er 25 år, fra Kvinesdal og har erfaring innen problemløsning, design, frontend-utvikling og akademisk skriving. Hun er opptatt av hvordan ting ser ut og hvordan brukeren opplever løsningen. Hun liker å kombinere estetikk med funksjonalitet gjennom å undersøke brukeropplevelsen fra start til slutt. På denne måten lager hun noe som både er fint, forståelig og brukervennlig. Gjennom tidligere arbeidsroller som studentmentor og vitenskapelig assistent ved UiA og intern på IT avdelingen i Flekkefjord Sparebank har Silje opparbeidet seg verdifull erfaring med både problemløsning, kommunikasjon og programmering. Silje mener at en tydelig struktur og god kommunikasjon er nøkkelen til å gjennomføre et godt prosjekt.</p>
+         <p class="bio">Jeg er opptatt av hvordan ting ser ut og hvordan brukeren opplever løsningen. Jeg liker å kombinere estetikk med funksjonalitet for å lage noe som både er fint og forståelig.</p>
          <ul class="facts">
-           <li>Teknologi: C#, HTML, Python, SQL, UX-design, Git, Github, Microsoft. </li>
-           <li>Erfaring: Vitenskapelig assistent og studentmentor ved institutt for informasjonssystemer, Intern på IT-avdelingen i Flekkefjord Sparebank, Praktikant som utvikler hos Phonero, Bachelor som barnehagelærer.</li>
-           <li>Valgfag: IS-218 Geografiske informasjonssystemer, IS-217 Universell utforming av informasjonssystemer, IS-214 Information system security, TFL-129 Innføringsemne for studentmentorer.</li>
+           <li>Ser på brukeropplevelsen fra start til slutt.</li>
+           <li>Fokuserer på tydelig struktur og visual kommunikasjon.</li>
+           <li>Har interesse for gode detaljer og konsistente valg.</li>
          </ul>
+         <div class="profile-actions">
+           <a class="linkedin" href="https://www.linkedin.com/in/silje-solberg" target="_blank" rel="noreferrer" aria-label="LinkedIn for Silje Solberg">
+             <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.94 8.5A1.56 1.56 0 1 1 6.93 5.4a1.56 1.56 0 0 1 .01 3.1ZM5.5 9.78h2.9v8.72H5.5V9.78Zm4.82 0h2.77v1.18h.04c.39-.73 1.33-1.5 2.73-1.5 2.92 0 3.46 1.92 3.46 4.42v6.62h-2.9v-6.2c0-1.48-.03-3.38-2.06-3.38-2.07 0-2.39 1.61-2.39 3.27v6.31h-2.9V9.78Z" fill="currentColor"/></svg>
+             LinkedIn
+           </a>
+         </div>
        </div>
      </article>
 
@@ -651,23 +561,22 @@ Gjennom studiet har hun også fått erfaring med ulike sider av IT-faget, og hen
            <img src="images/Ji.jpg" alt="Bilde av Jihyung Choi">
          </div>
          <h3>Jihyung Choi</h3>
-         <p class="role">Frontend</p>
-         <div class="profile-actions">
-           <a class="social-link linkedin" href="https://www.linkedin.com/in/jihyung-choi-49611b42b/" target="_blank" rel="noreferrer" aria-label="LinkedIn for Jihyung Choi">
-             <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.94 8.5A1.56 1.56 0 1 1 6.93 5.4a1.56 1.56 0 0 1 .01 3.1ZM5.5 9.78h2.9v8.72H5.5V9.78Zm4.82 0h2.77v1.18h.04c.39-.73 1.33-1.5 2.73-1.5 2.92 0 3.46 1.92 3.46 4.42v6.62h-2.9v-6.2c0-1.48-.03-3.38-2.06-3.38-2.07 0-2.39 1.61-2.39 3.27v6.31h-2.9V9.78Z" fill="currentColor"/></svg>
-           </a>
-           <a class="social-link github" href="https://github.com/jihyung-choi" target="_blank" rel="noreferrer" aria-label="GitHub for Jihyung Choi">
-             <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.58.1.79-.25.79-.56v-2.15c-3.2.7-3.88-1.36-3.88-1.36-.52-1.33-1.28-1.68-1.28-1.68-1.05-.72.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.76 2.7 1.25 3.36.96.1-.75.4-1.25.73-1.54-2.55-.29-5.24-1.28-5.24-5.68 0-1.25.45-2.28 1.19-3.08-.12-.29-.52-1.46.11-3.04 0 0 .97-.31 3.17 1.18a10.9 10.9 0 0 1 5.77 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.58.23 2.75.11 3.04.74.8 1.19 1.83 1.19 3.08 0 4.42-2.69 5.38-5.25 5.67.41.36.78 1.06.78 2.14v3.15c0 .31.21.67.8.56A11.52 11.52 0 0 0 23.5 12C23.5 5.65 18.35.5 12 .5Z" fill="currentColor"/></svg>
-           </a>
-         </div>
+         <p class="role">Full-stack utvikler</p>
        </div>
        <div class="member-details">
-         <p class="bio">Jeg liker å bygge og forfine digitale løsninger som er både funksjonelle og brukervennlige. Jeg synes det er spennende å kombinere kreativ problemløsning med tekniske løsninger.</p>
+         <p class="bio">Jihyung Choi er 22 år, fra Kristiansand, og studerer IT og informasjonssystemer ved Universitetet i Agder. Hun er interessert i full-stack-utvikling, brukeropplevelse og design, og liker å utvikle digitale løsninger som kombinerer funksjonalitet med et godt visuelt uttrykk. Gjennom studiene har hun fått erfaring med programmering, webutvikling og prosjektarbeid. Våren 2026 var hun utvekslingsstudent ved Chung-Ang University i Sør-Korea, hvor hun deltok aktivt i flere studentorganisasjoner. Gjennom BDAI fikk hun praktisk erfaring med SQL og dataanalyse, i MUSE lærte hun gitar og trommer og spilte i band, og i Korea Club var hun assistent og bidro til språk- og kulturutveksling med studenter fra ulike land. </p>
          <ul class="facts">
-           <li>Har fokus på implementering og visuell kvalitet.</li>
-           <li>Jobber godt med både kode og design.</li>
-           <li>Er glad i å prøve nye løsninger som forbedrer erfaringen.</li>
+           <li>Teknologi: C#, HTML, CSS, JavaScript, Python, SQL, Git, GitHub, UX-design</li>
+           <li>Erfaring: Webutviklingsprosjekt ved Universitet i Agder med Kartverket, teamprosjekter innen systemutvikling og databasearbeid, praktisk erfaring med SQL- og dataanalyse gjennom BDAI, frivillig assistent i Korea Club med språk- og kulturutveksling, samt bandmedlem i MUSE.</li>
+           <li>Utveksling: Chung-Ang University, Seoul, Sør-Korea</li>
+             
          </ul>
+         <div class="profile-actions">
+           <a class="linkedin" href="https://www.linkedin.com/in/jihyung-choi-49611b42b/" target="_blank" rel="noreferrer" aria-label="LinkedIn for Jihyung Choi">
+             <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.94 8.5A1.56 1.56 0 1 1 6.93 5.4a1.56 1.56 0 0 1 .01 3.1ZM5.5 9.78h2.9v8.72H5.5V9.78Zm4.82 0h2.77v1.18h.04c.39-.73 1.33-1.5 2.73-1.5 2.92 0 3.46 1.92 3.46 4.42v6.62h-2.9v-6.2c0-1.48-.03-3.38-2.06-3.38-2.07 0-2.39 1.61-2.39 3.27v6.31h-2.9V9.78Z" fill="currentColor"/></svg>
+             LinkedIn
+           </a>
+         </div>
        </div>
      </article>
 
@@ -679,22 +588,20 @@ Gjennom studiet har hun også fått erfaring med ulike sider av IT-faget, og hen
          </div>
          <h3>Filip Edvardsen</h3>
          <p class="role">Analyse / dokumentasjon</p>
-         <div class="profile-actions">
-           <a class="social-link linkedin" href="https://www.linkedin.com/in/filip-edvardsen-554334406/" target="_blank" rel="noreferrer" aria-label="LinkedIn for Filip Edvardsen">
-             <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.94 8.5A1.56 1.56 0 1 1 6.93 5.4a1.56 1.56 0 0 1 .01 3.1ZM5.5 9.78h2.9v8.72H5.5V9.78Zm4.82 0h2.77v1.18h.04c.39-.73 1.33-1.5 2.73-1.5 2.92 0 3.46 1.92 3.46 4.42v6.62h-2.9v-6.2c0-1.48-.03-3.38-2.06-3.38-2.07 0-2.39 1.61-2.39 3.27v6.31h-2.9V9.78Z" fill="currentColor"/></svg>
-           </a>
-           <a class="social-link github" href="https://github.com/filipedv" target="_blank" rel="noreferrer" aria-label="GitHub for Filip Edvardsen">
-             <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.58.1.79-.25.79-.56v-2.15c-3.2.7-3.88-1.36-3.88-1.36-.52-1.33-1.28-1.68-1.28-1.68-1.05-.72.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.76 2.7 1.25 3.36.96.1-.75.4-1.25.73-1.54-2.55-.29-5.24-1.28-5.24-5.68 0-1.25.45-2.28 1.19-3.08-.12-.29-.52-1.46.11-3.04 0 0 .97-.31 3.17 1.18a10.9 10.9 0 0 1 5.77 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.58.23 2.75.11 3.04.74.8 1.19 1.83 1.19 3.08 0 4.42-2.69 5.38-5.25 5.67.41.36.78 1.06.78 2.14v3.15c0 .31.21.67.8.56A11.52 11.52 0 0 0 23.5 12C23.5 5.65 18.35.5 12 .5Z" fill="currentColor"/></svg>
-           </a>
-         </div>
        </div>
        <div class="member-details">
-         <p class="bio">Filip Edvardsen er 22 år, fra Porsgrunn, og har erfaring innen backend-utvikling, systemarkitektur og databasehåndtering. Han er opptatt av hvordan systemer bygges opp, og liker å forstå hvordan arkitektur og datastrukturer henger sammen. Han er også interessert i hvordan KI kan utnyttes i systemutvikling. Ved siden av studiene jobber Filip som teknisk support hos GlobalConnect, og er denne høsten i praksis hos IK Start hvor han utvikler en ernæringsapplikasjon for klubbens akademispillere. Gjennom disse rollene, samt et webapplikasjonsprosjekt hos Kartverket i 3. semester, har han opparbeidet seg solid erfaring med både problemløsning, kommunikasjon og programmering.</p>
+         <p class="bio">Jeg liker å se sammenhenger og gjøre kompliserte ting mer oversiktlige. Jeg er god til å samle informasjon, analysere og gjøre det tydelig for resten av gruppen.</p>
          <ul class="facts">
-           <li>Teknologi: C#, .NET, SQL, Python, TypeScript, JavaScript, Docker, GitHub</li>
-           <li>Erfaring: Teknisk support hos GlobalConnect, praksis hos IK Start, webapplikasjonsprosjekt hos Kartverket (backend/database, 3. semester).</li>
-           <li>Utveksling: Vysoká škola ekonomická v Praze, Faculty of Informatics and Statistics.</li>
+           <li>Fokuserer på struktur, forståelse og dokumentasjon.</li>
+           <li>Er trygg i å koble ideer til konkrete handlinger.</li>
+           <li>Hjelper gruppen med tydelige beslutninger og oppfølging.</li>
          </ul>
+         <div class="profile-actions">
+           <a class="linkedin" href="https://www.linkedin.com/in/filip-edvardsen-554334406/" target="_blank" rel="noreferrer" aria-label="LinkedIn for Filip Edvardsen">
+             <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.94 8.5A1.56 1.56 0 1 1 6.93 5.4a1.56 1.56 0 0 1 .01 3.1ZM5.5 9.78h2.9v8.72H5.5V9.78Zm4.82 0h2.77v1.18h.04c.39-.73 1.33-1.5 2.73-1.5 2.92 0 3.46 1.92 3.46 4.42v6.62h-2.9v-6.2c0-1.48-.03-3.38-2.06-3.38-2.07 0-2.39 1.61-2.39 3.27v6.31h-2.9V9.78Z" fill="currentColor"/></svg>
+             LinkedIn
+           </a>
+         </div>
        </div>
      </article>
 
@@ -706,22 +613,20 @@ Gjennom studiet har hun også fått erfaring med ulike sider av IT-faget, og hen
          </div>
          <h3>Øyvind Birkeland</h3>
          <p class="role">Testing / kvalitet</p>
-         <div class="profile-actions">
-           <a class="social-link linkedin" href="https://www.linkedin.com/in/%C3%B8yvind-birkeland-87302531a/" target="_blank" rel="noreferrer" aria-label="LinkedIn for Øyvind Birkeland">
-             <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.94 8.5A1.56 1.56 0 1 1 6.93 5.4a1.56 1.56 0 0 1 .01 3.1ZM5.5 9.78h2.9v8.72H5.5V9.78Zm4.82 0h2.77v1.18h.04c.39-.73 1.33-1.5 2.73-1.5 2.92 0 3.46 1.92 3.46 4.42v6.62h-2.9v-6.2c0-1.48-.03-3.38-2.06-3.38-2.07 0-2.39 1.61-2.39 3.27v6.31h-2.9V9.78Z" fill="currentColor"/></svg>
-           </a>
-           <a class="social-link github" href="https://github.com/OyvindBirkeland" target="_blank" rel="noreferrer" aria-label="GitHub for Øyvind Birkeland">
-             <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.58.1.79-.25.79-.56v-2.15c-3.2.7-3.88-1.36-3.88-1.36-.52-1.33-1.28-1.68-1.28-1.68-1.05-.72.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.76 2.7 1.25 3.36.96.1-.75.4-1.25.73-1.54-2.55-.29-5.24-1.28-5.24-5.68 0-1.25.45-2.28 1.19-3.08-.12-.29-.52-1.46.11-3.04 0 0 .97-.31 3.17 1.18a10.9 10.9 0 0 1 5.77 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.58.23 2.75.11 3.04.74.8 1.19 1.83 1.19 3.08 0 4.42-2.69 5.38-5.25 5.67.41.36.78 1.06.78 2.14v3.15c0 .31.21.67.8.56A11.52 11.52 0 0 0 23.5 12C23.5 5.65 18.35.5 12 .5Z" fill="currentColor"/></svg>
-           </a>
-         </div>
        </div>
        <div class="member-details">
-         <p class="bio">Øyvind er 24 år, fra Arendal, og har erfaring innen back-end, databaser og problemløsing. Han er opptatt av hvordan ting fungerer og at programmet fungerer optimalt Øyvind liker å bryte ned komplekse utfordringer til mindre deler før han finner den beste løsningen..</p>
+         <p class="bio">Jeg ser etter detaljer og kvalitet i det vi gjør. Jeg liker å være trygg på at løsningen faktisk fungerer og at vi har tatt høyde for feil og forbedringer.</p>
          <ul class="facts">
-           <li>Teknologi: C#, Python, SQL, Git, Github, Microsoft, .Net.</li>
-           <li>Erfaring: Praksis hos IK start.</li>
-           <li>Valgfag: 30 studiepoeng på utveksling i Praha.</li>
+           <li>Har fokus på kvalitet og presisjon.</li>
+           <li>Ser etter feil, svakheter og forbedringsområder.</li>
+           <li>Hjelper gruppen med å få løpende kontroll på resultatet.</li>
          </ul>
+         <div class="profile-actions">
+           <a class="linkedin" href="https://www.linkedin.com/in/%C3%B8yvind-birkeland-87302531a/" target="_blank" rel="noreferrer" aria-label="LinkedIn for Øyvind Birkeland">
+             <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.94 8.5A1.56 1.56 0 1 1 6.93 5.4a1.56 1.56 0 0 1 .01 3.1ZM5.5 9.78h2.9v8.72H5.5V9.78Zm4.82 0h2.77v1.18h.04c.39-.73 1.33-1.5 2.73-1.5 2.92 0 3.46 1.92 3.46 4.42v6.62h-2.9v-6.2c0-1.48-.03-3.38-2.06-3.38-2.07 0-2.39 1.61-2.39 3.27v6.31h-2.9V9.78Z" fill="currentColor"/></svg>
+             LinkedIn
+           </a>
+         </div>
        </div>
      </article>
 
@@ -731,21 +636,14 @@ Gjennom studiet har hun også fått erfaring med ulike sider av IT-faget, og hen
 <!-- Ta Kontakt  -->
   <footer id="kontakt">
     <p class="section-label">Ta Kontakt</p>
-    <p>Har du spørsmål eller ønsker en prat?</p>
-    <div class="primary-contact">
-      <p><strong>Primærkontakt: </strong></p>
-      <p>Ida Elise Jamissen - <a href="mailto:iejamissen@uia.no">iejamissen@uia.no</a></p>
-    </div>
-    <p>Du kan også kontakte resten av gruppemedlemmene direkte:</p>
+    <p>Har du spørsmål eller ønsker en prat? Ikke nøl med å ta kontakt med oss!</p>
     <div class="contact-line">
-      <span>Sivert Dørum - <a href="mailto:sivertdorum@gmail.com">sivertdorum@gmail.com</a></span>
-      <span>Silje Solberg - <a href="mailto:siljeso@uia.no">siljeso@uia.no</a></span>
-      <span>Jihyung Choi - <a href="mailto:jihyungc@uia.no">jihyungc@uia.no</a></span>
-      <span>Filip Edvardsen - <a href="mailto:filiped@uia.no">filiped@uia.no</a></span>
-      <span>Øyvind Birkeland - <a href="mailto:oyvindbirkeland0@gmail.com">oyvindbirkeland0@gmail.com</a></span>
-    </div>
-    <div class="footer-bottom">
-      <span>IS-310 │ Gruppe 11 │ 2026</span>
+      <span>Ida Elise Jamissen — <a href="mailto:iejamissen@uia.no">iejamissen@uia.no</a></span>
+      <span>Sivert Dørum — <a href="mailto:sivertdorum@gmail.com">sivertdorum@gmail.com</a></span>
+      <span>Silje Solberg — <a href="mailto:siljeso@uia.no">siljeso@uia.no</a></span>
+      <span>Jihyung Choi — <a href="mailto:jihyungc@uia.no">jihyungc@uia.no</a></span>
+      <span>Filip Edvardsen — <a href="mailto:filiped@uia.no">filiped@uia.no</a></span>
+      <span>Øyvind Birkeland — <a href="mailto:oyvindbirkeland0@gmail.com">oyvindbirkeland0@gmail.com</a></span>
     </div>
   </footer>
 
