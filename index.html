@@ -13,9 +13,9 @@
     --surface: #ffffff;
     --text: #0f172a;
     --text-muted: #475569;
-    --primary: #4b75d0;
-    --line: #dbeafe;
-    --line-strong: #93c5fd;
+    --primary: #2e8b57;
+    --line: #d9f1e1;
+    --line-strong: #72c18a;
   }
 
   * { box-sizing: border-box; }
@@ -45,7 +45,7 @@
     width: 100%;
     background: var(--primary);
     border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-    box-shadow: 0 6px 18px rgba(31, 64, 153, 0.15);
+    box-shadow: 0 6px 18px rgba(30, 94, 59, 0.15);
   }
 
   .top-nav .nav-inner{
@@ -98,11 +98,29 @@
     border-bottom-color: #e0f2fe;
   }
 
-  header.cover{
-    position: relative;
-    padding: 88px 0 64px;
-    border-bottom: 1px solid var(--line-strong);
-  }
+.cover {
+  position: relative;
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+  overflow: hidden;
+}
+
+.cover-banner {
+  width: 100%;
+  height: 420px;
+  object-fit: cover;
+  object-position: center 10%;
+  display: block;
+}
+
+.cover-content {
+  position: relative;
+  z-index: 1;
+  width: min(100%, 1040px);
+  margin: 0 auto;
+  padding: 20px 28px 10px;
+  text-align: center;
+}
 
   .eyebrow{
     font-family: 'Space Mono', monospace;
@@ -110,21 +128,23 @@
     letter-spacing: 0.14em;
     text-transform: uppercase;
     color: var(--primary);
-    margin: 0 0 14px;
+    margin: 0 auto 14px;
   }
 
   h1.title{
     font-weight: 700;
-    font-size: clamp(2.2rem, 5vw, 3.6rem);
-    line-height: 1.08;
-    margin: 0 0 16px;
+    font-size: clamp(3rem, 7vw, 5rem);
+    line-height: 0.90;
+    margin: 0 auto 28px;
+    max-width: 540px;
+    color: var(--primary);
   }
 
   .subtitle{
-    max-width: 560px;
-    font-size: 1.1rem;
-    color: var(--text-muted);
-    margin: 0;
+    max-width: 900px;
+    font-size: 1.2rem;
+    color: #111111;
+    margin: 0 auto;
   }
 
   .stamp{ display: none; }
@@ -132,6 +152,30 @@
   section{ padding: 64px 0; }
   section + section{ border-top: 1px solid var(--line); }
   section, footer{ scroll-margin-top: 78px; }
+
+  .video-section {
+    padding-top: 18px;
+    padding-bottom: 18px;
+  }
+
+  .video-wrap {
+    position: relative;
+    width: 100%;
+    max-width: 980px;
+    margin: 0 auto;
+    aspect-ratio: 16 / 9;
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid var(--line);
+    box-shadow: 0 8px 24px rgba(15, 23, 42, 0.08);
+  }
+
+  .video-wrap iframe {
+    display: block;
+    width: 100%;
+    height: 100%;
+    border: 0;
+  }
 
   .section-label{
     font-family: 'Space Mono', monospace;
@@ -309,7 +353,7 @@
   }
 
   .card .social-link.linkedin{
-    background: #0a66c2;
+    background: #1f8a52;
   }
 
   .card .social-link.github{
@@ -481,6 +525,7 @@
       <ul>
         <li><a href="#om">Om gruppen</a></li>
         <li><a href="#medlemmer">Medlemmer</a></li>
+        <li><a href="#video">Videopresentasjon</a></li>
         <li><a href="#kontakt">Ta kontakt</a></li>
       </ul>
     </div>
@@ -490,9 +535,13 @@
 
   <!-- Overskrift -->
  <header class="cover" id="om">
-    <h1 class="title">Gruppe 11</h1>
-   <p class="eyebrow">Om gruppen</p>
-   <p class="subtitle">Vi er gruppe 11 og jobber sammen for å utvikle brukervennlige og gjennomtenkte løsninger! Vi kombinerer ulike ferdigheter og perspektiver, og legger vekt på godt samarbeid, kreativitet og problemløsning.</p>
+   <img class="cover-banner" src="images/gruppebilde.jpg" alt="Banner med gruppa">
+   <div class="cover-gradient" aria-hidden="true"></div>
+   <div class="cover-content">
+     <p class="eyebrow"></p>
+     <h1 class="title">Gruppe 11</h1>
+     <p class="subtitle">Vi er gruppe 11 og jobber sammen for å utvikle brukervennlige og gjennomtenkte løsninger!<br>Vi kombinerer ulike ferdigheter og perspektiver, og legger vekt på godt samarbeid og problemløsning.</p>
+   </div>
  </header>
 
 
@@ -668,6 +717,25 @@
        </div>
      </article>
 
+   </div>
+ </section>
+
+
+<!-- Video  -->
+ <section id="video">
+   <p class="section-label">Videopresentasjon</p>
+   <h2>Bli kjent med gruppa!</h2>
+
+ <section id="video" class="video-section" aria-label="Video fra prosjektet">
+   <div class="video-wrap">
+     <iframe
+       src="https://www.youtube.com/embed/SopytARRfd0?rel=0"
+       title="Video om IS-310 prosjektet"
+       loading="lazy"
+       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+       referrerpolicy="strict-origin-when-cross-origin"
+       allowfullscreen>
+     </iframe>
    </div>
  </section>
 
