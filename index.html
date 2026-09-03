@@ -13,9 +13,9 @@
     --surface: #ffffff;
     --text: #0f172a;
     --text-muted: #475569;
-    --primary: #4b75d0;
-    --line: #dbeafe;
-    --line-strong: #93c5fd;
+    --primary: #2e8b57;
+    --line: #d9f1e1;
+    --line-strong: #72c18a;
   }
 
   * { box-sizing: border-box; }
@@ -45,7 +45,7 @@
     width: 100%;
     background: var(--primary);
     border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-    box-shadow: 0 6px 18px rgba(31, 64, 153, 0.15);
+    box-shadow: 0 6px 18px rgba(30, 94, 59, 0.15);
   }
 
   .top-nav .nav-inner{
@@ -98,11 +98,29 @@
     border-bottom-color: #e0f2fe;
   }
 
-  header.cover{
-    position: relative;
-    padding: 88px 0 64px;
-    border-bottom: 1px solid var(--line-strong);
-  }
+.cover {
+  position: relative;
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+  overflow: hidden;
+}
+
+.cover-banner {
+  width: 100%;
+  height: 420px;
+  object-fit: cover;
+  object-position: center 10%;
+  display: block;
+}
+
+.cover-content {
+  position: relative;
+  z-index: 1;
+  width: min(100%, 1040px);
+  margin: 0 auto;
+  padding: 20px 28px 10px;
+  text-align: center;
+}
 
   .eyebrow{
     font-family: 'Space Mono', monospace;
@@ -110,21 +128,24 @@
     letter-spacing: 0.14em;
     text-transform: uppercase;
     color: var(--primary);
-    margin: 0 0 14px;
+    margin: 0 auto 14px;
   }
 
   h1.title{
     font-weight: 700;
-    font-size: clamp(2.2rem, 5vw, 3.6rem);
-    line-height: 1.08;
-    margin: 0 0 16px;
+    font-size: clamp(3rem, 7vw, 5rem);
+    line-height: 0.90;
+    margin: 0 auto 28px;
+    max-width: 540px;
+    color: var(--primary);
   }
 
   .subtitle{
-    max-width: 560px;
-    font-size: 1.1rem;
-    color: var(--text-muted);
-    margin: 0;
+    width: calc(100% + 56px);
+    max-width: none;
+    font-size: 1.2rem;
+    color: #111111;
+    margin: 0 0 0 -28px;
   }
 
   .stamp{ display: none; }
@@ -133,9 +154,33 @@
   section + section{ border-top: 1px solid var(--line); }
   section, footer{ scroll-margin-top: 78px; }
 
+  .video-section {
+    padding-top: 18px;
+    padding-bottom: 18px;
+  }
+
+  .video-wrap {
+    position: relative;
+    width: 100%;
+    max-width: 980px;
+    margin: 0 auto;
+    aspect-ratio: 16 / 9;
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid var(--line);
+    box-shadow: 0 8px 24px rgba(15, 23, 42, 0.08);
+  }
+
+  .video-wrap iframe {
+    display: block;
+    width: 100%;
+    height: 100%;
+    border: 0;
+  }
+
   .section-label{
     font-family: 'Space Mono', monospace;
-    font-size: 0.75rem;
+    font-size: 0.8rem;
     letter-spacing: 0.12em;
     text-transform: uppercase;
     color: var(--primary);
@@ -379,30 +424,83 @@
     font-size: 0.95rem;
   }
 
-  footer{
-    padding: 60px 0 80px;
-    border-top: 1px solid var(--line-strong);
-  }
+  /* ta kontakt */
 
-  footer .contact-line{
+/* kontakt-liste format primær*/
+  .contact-band .primary-list {
     display: flex;
-    flex-wrap: wrap;
-    gap: 10px 28px;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px 18px;
     font-family: 'Space Mono', monospace;
-    font-size: 0.88rem;
-    color: var(--text-muted);
+    font-size: 0.9rem;
   }
 
-  footer .contact-line a{
-    text-decoration: none;
-    border-bottom: 1px solid var(--line-strong);
-  }
-
-  footer .fine{
-    margin-top: 28px;
+/* kontakt-liste format sekundær */
+    .contact-band .contact-list {
+    display: flex;
+    flex-direction: center;
+    align-items: center;
+    gap: 12px 18px;
+    font-family: 'Space Mono', monospace;
     font-size: 0.8rem;
-    color: var(--text-muted);
-    opacity: 0.7;
+  }
+
+  /* primærkontakt-boks */
+  .contact-band .contact-item,
+  .contact-band .primary-contact {
+    color: var(--text);
+  }
+
+  /* primærkontakt-boks stil */
+  .contact-band .primary-contact {
+    display: inline-flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8px;
+    padding: 20px 100px;
+    border-radius: 999px;
+    background: rgba(46, 139, 87, 0.08);
+    border: 1px solid var(--line-strong);
+    color: var(--text);
+    font-weight: 500;
+    box-shadow: 0 8px 18px rgba(30, 94, 59, 0.08);
+  }
+
+
+  /* footer */
+  .site-footer{
+    width: 100vw;
+    margin-left: calc(50% - 50vw);
+    background: var(--primary);
+    border-top: 1px solid rgba(255,255,255,0.2);
+    box-shadow: 0 -6px 18px rgba(30, 94, 59, 0.12);
+  }
+
+  .site-footer .nav-inner{
+    max-width: 1040px;
+    margin: 0 auto;
+    padding: 18px 28px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+  }
+
+  .site-footer .brand,
+  .site-footer .footer-text {
+    color: #ffffff;
+    text-decoration: none;
+    font-family: 'Space Mono', monospace;
+    font-size: 0.92rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    font-weight: 700;
+  }
+
+  .site-footer .footer-text {
+    opacity: 0.9;
+    font-weight: 400;
   }
 
   @media (max-width: 980px){
@@ -481,6 +579,7 @@
       <ul>
         <li><a href="#om">Om gruppen</a></li>
         <li><a href="#medlemmer">Medlemmer</a></li>
+        <li><a href="#video">Videopresentasjon</a></li>
         <li><a href="#kontakt">Ta kontakt</a></li>
       </ul>
     </div>
@@ -490,9 +589,18 @@
 
   <!-- Overskrift -->
  <header class="cover" id="om">
-    <h1 class="title">Gruppe 11</h1>
-   <p class="eyebrow">Om gruppen</p>
-   <p class="subtitle">Vi er gruppe 11 og jobber sammen for å utvikle brukervennlige og gjennomtenkte løsninger! Vi kombinerer ulike ferdigheter og perspektiver, og legger vekt på godt samarbeid, kreativitet og problemløsning.</p>
+   <img class="cover-banner" src="images/gruppebilde.jpg" alt="Banner med gruppa">
+   <div class="cover-gradient" aria-hidden="true"></div>
+   <div class="cover-content">
+     <p class="eyebrow"></p>
+     <h1 class="title">Gruppe 11</h1>
+     <p class="subtitle">
+          Vi er gruppe 11 og jobber sammen for å utvikle brukervennlige og gjennomtenkte løsninger!
+      <br>Gruppen kombinerer ulike ferdigheter og perspektiver, og legger vekt på godt samarbeid og problemløsning
+      <br>og ønsker derforet prosjekt hvor vi kan utfolde og utforde oss som gruppe og som individer. 
+      <br>Vi er først og fremt studenter og satser vår fulle oppmerksomhet til gjennomnføringen av bachelorprosjektet!
+    </p>
+   </div>
  </header>
 
 
@@ -514,7 +622,7 @@
            <a class="social-link linkedin" href="https://www.linkedin.com/in/ida-elise-jamissen/" target="_blank" rel="noreferrer" aria-label="LinkedIn for Ida Elise Jamissen">
              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.94 8.5A1.56 1.56 0 1 1 6.93 5.4a1.56 1.56 0 0 1 .01 3.1ZM5.5 9.78h2.9v8.72H5.5V9.78Zm4.82 0h2.77v1.18h.04c.39-.73 1.33-1.5 2.73-1.5 2.92 0 3.46 1.92 3.46 4.42v6.62h-2.9v-6.2c0-1.48-.03-3.38-2.06-3.38-2.07 0-2.39 1.61-2.39 3.27v6.31h-2.9V9.78Z"/></svg>
            </a>
-           <a class="social-link github" href="https://github.com/" target="_blank" rel="noreferrer" aria-label="GitHub-profil for Ida Elise Jamissen">
+           <a class="social-link github" href="https://github.com/idaelisej" target="_blank" rel="noreferrer" aria-label="GitHub-profil for Ida Elise Jamissen">
              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2C6.48 2 2 6.58 2 12.22c0 4.5 2.87 8.32 6.84 9.67.5.1.68-.22.68-.49v-1.7c-2.78.62-3.37-1.36-3.37-1.36-.46-1.2-1.11-1.52-1.11-1.52-.9-.63.07-.62.07-.62 1 .07 1.53 1.04 1.53 1.04.89 1.56 2.34 1.11 2.91.85.09-.66.35-1.11.63-1.37-2.22-.26-4.56-1.15-4.56-5.12 0-1.13.39-2.05 1.03-2.77-.1-.26-.45-1.32.1-2.75 0 0 .84-.27 2.75 1.05A9.35 9.35 0 0 1 12 6.84c.85 0 1.71.12 2.51.36 1.9-1.32 2.74-1.05 2.74-1.05.56 1.43.21 2.49.11 2.75.64.72 1.03 1.64 1.03 2.77 0 3.98-2.35 4.85-4.58 5.11.36.32.68.96.68 1.94v2.87c0 .27.18.6.69.49A10.23 10.23 0 0 0 22 12.22C22 6.58 17.52 2 12 2Z"/></svg>
            </a>
          </div>
@@ -522,9 +630,9 @@
        <div class="member-details">
            <p class="bio">Ida er 22 år og kommer fra Sarpsborg. I bachelorprosjektet har hun rollen som gruppeleder. Hun har tidligere hatt rollen som gruppeleder i flere av prosjektene i løpet av studiet, og trives godt med å ha ansvar for struktur, planlegging og fremdrift. Som gruppeleder er hun opptatt av å skape et godt miljø i gruppa og sørge for at alle jobber mot et felles mål. Gjennom studiet har hun også fått erfaring med ulike sider av IT-faget, og hennes største interesser er interaksjonsdesign og databasesystemer. Hun syntes det er interessant å se hvordan brukeropplevelse og tekniske løsninger kan kombineres for å utvikle systemer som funker godt teknisk men som også oppleves brukervennlige.</p>
            <ul class="facts">
-               <li>Teknologi: PostgreSQL, C#, HTML, UX-design, Python, koordinering av team, kommunikasjon.</li>
-               <li>Erfaring: Studentmedarbeider ved UiA Karriere, studentmentor og læringsassistent ved institutt for informasjonssystemer, kaptein og trener for KSI Topaz cheerleading. Tidligere leder for KSI Topaz cheerleading.</li>
-               <li>Valgfag: TFL-119 IT og Samfunnsendringer, IS-214 Information Systems Security, IS-309 Videregående Databasesystemer, DAT104 Multimediedesign, TFL129 Innføringsemne for Studentmentorer.</li>
+               <li><strong>Teknologi:</strong> PostgreSQL, C#, HTML, UX-design, Python, koordinering av team, kommunikasjon.</li>
+               <li><strong>Erfaring:</strong> Studentmedarbeider ved UiA Karriere, studentmentor og læringsassistent ved institutt for informasjonssystemer, kaptein og trener for KSI Topaz cheerleading. Tidligere leder for KSI Topaz cheerleading.</li>
+               <li><strong>Valgfag:</strong> TFL-119 IT og Samfunnsendringer, IS-214 Information Systems Security, IS-309 Videregående Databasesystemer, DAT104 Multimediedesign, TFL129 Innføringsemne for Studentmentorer.</li>
            </ul>
        </div>
      </article>
@@ -541,7 +649,7 @@
            <a class="social-link linkedin" href="https://www.linkedin.com/in/sivert-d%C3%B8rum-015b0140a/" target="_blank" rel="noreferrer" aria-label="LinkedIn for Sivert Dørum">
              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.94 8.5A1.56 1.56 0 1 1 6.93 5.4a1.56 1.56 0 0 1 .01 3.1ZM5.5 9.78h2.9v8.72H5.5V9.78Zm4.82 0h2.77v1.18h.04c.39-.73 1.33-1.5 2.73-1.5 2.92 0 3.46 1.92 3.46 4.42v6.62h-2.9v-6.2c0-1.48-.03-3.38-2.06-3.38-2.07 0-2.39 1.61-2.39 3.27v6.31h-2.9V9.78Z"/></svg>
            </a>
-           <a class="social-link github" href="https://github.com/" target="_blank" rel="noreferrer" aria-label="GitHub-profil for Sivert Dørum">
+           <a class="social-link github" href="https://github.com/sivertdorum" target="_blank" rel="noreferrer" aria-label="GitHub-profil for Sivert Dørum">
              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2C6.48 2 2 6.58 2 12.22c0 4.5 2.87 8.32 6.84 9.67.5.1.68-.22.68-.49v-1.7c-2.78.62-3.37-1.36-3.37-1.36-.46-1.2-1.11-1.52-1.11-1.52-.9-.63.07-.62.07-.62 1 .07 1.53 1.04 1.53 1.04.89 1.56 2.34 1.11 2.91.85.09-.66.35-1.11.63-1.37-2.22-.26-4.56-1.15-4.56-5.12 0-1.13.39-2.05 1.03-2.77-.1-.26-.45-1.32.1-2.75 0 0 .84-.27 2.75 1.05A9.35 9.35 0 0 1 12 6.84c.85 0 1.71.12 2.51.36 1.9-1.32 2.74-1.05 2.74-1.05.56 1.43.21 2.49.11 2.75.64.72 1.03 1.64 1.03 2.77 0 3.98-2.35 4.85-4.58 5.11.36.32.68.96.68 1.94v2.87c0 .27.18.6.69.49A10.23 10.23 0 0 0 22 12.22C22 6.58 17.52 2 12 2Z"/></svg>
            </a>
          </div>
@@ -549,10 +657,10 @@
        <div class="member-details">
            <p class="bio">Sivert er 21 år, fra Stavanger og opptatt av utvikling, problemløsning og godt samarbeid. Som vara-leder liker han å ta ansvar, skape struktur og bidra til at arbeidet i gruppen går fremover. Han er løsningsorientert og trives godt med å samarbeide med andre for å finne gode løsninger. Gjennom utveksling i USA har Sivert fått erfaring med å tilpasse seg nye miljøer og arbeidsmåter, samtidig som praksis hos IK Start har gitt ham praktisk erfaring med utvikling i et reelt prosjekt. Sivert mener at tydelig kommunikasjon, struktur og godt samarbeid er viktige faktorer for å gjennomføre et godt prosjekt.</p>
            <ul class="facts">
-               <li>Teknologi: C#, HTML, CSS, Python, SQL, Git, GitHub, Docker.</li>
-               <li>Erfaring: Praktikant hos Start med utvikling av ernæringsapplikasjon, vara-leder og erfaring fra utviklingsprosjekter i team.</li>
-               <li>Valgfag: IKT-115 Introduksjon til kunstig intelligens-teknologi.</li>
-               <li>Utveksling: University of Nebraska, Omaha.</li>
+               <li><strong>Teknologi:</strong> C#, HTML, CSS, Python, SQL, Git, GitHub, Docker.</li>
+               <li><strong>Erfaring:</strong> Praktikant hos Start med utvikling av ernæringsapplikasjon, vara-leder og erfaring fra utviklingsprosjekter i team.</li>
+               <li><strong>Valgfag:</strong> IKT-115 Introduksjon til kunstig intelligens-teknologi.</li>
+               <li><strong>Utveksling:</strong> University of Nebraska, Omaha.</li>
            </ul>
        </div>
      </article>
@@ -569,7 +677,7 @@
            <a class="social-link linkedin" href="https://www.linkedin.com/in/silje-solberg" target="_blank" rel="noreferrer" aria-label="LinkedIn for Silje Solberg">
              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.94 8.5A1.56 1.56 0 1 1 6.93 5.4a1.56 1.56 0 0 1 .01 3.1ZM5.5 9.78h2.9v8.72H5.5V9.78Zm4.82 0h2.77v1.18h.04c.39-.73 1.33-1.5 2.73-1.5 2.92 0 3.46 1.92 3.46 4.42v6.62h-2.9v-6.2c0-1.48-.03-3.38-2.06-3.38-2.07 0-2.39 1.61-2.39 3.27v6.31h-2.9V9.78Z"/></svg>
            </a>
-           <a class="social-link github" href="https://github.com/" target="_blank" rel="noreferrer" aria-label="GitHub-profil for Silje Solberg">
+           <a class="social-link github" href="https://github.com/siljesolberg" target="_blank" rel="noreferrer" aria-label="GitHub-profil for Silje Solberg">
              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2C6.48 2 2 6.58 2 12.22c0 4.5 2.87 8.32 6.84 9.67.5.1.68-.22.68-.49v-1.7c-2.78.62-3.37-1.36-3.37-1.36-.46-1.2-1.11-1.52-1.11-1.52-.9-.63.07-.62.07-.62 1 .07 1.53 1.04 1.53 1.04.89 1.56 2.34 1.11 2.91.85.09-.66.35-1.11.63-1.37-2.22-.26-4.56-1.15-4.56-5.12 0-1.13.39-2.05 1.03-2.77-.1-.26-.45-1.32.1-2.75 0 0 .84-.27 2.75 1.05A9.35 9.35 0 0 1 12 6.84c.85 0 1.71.12 2.51.36 1.9-1.32 2.74-1.05 2.74-1.05.56 1.43.21 2.49.11 2.75.64.72 1.03 1.64 1.03 2.77 0 3.98-2.35 4.85-4.58 5.11.36.32.68.96.68 1.94v2.87c0 .27.18.6.69.49A10.23 10.23 0 0 0 22 12.22C22 6.58 17.52 2 12 2Z"/></svg>
            </a>
          </div>
@@ -577,9 +685,9 @@
        <div class="member-details">
            <p class="bio">Silje er 25 år, fra Kvinesdal og har erfaring innen problemløsning, design, frontend-utvikling og akademisk skriving. Hun er opptatt av hvordan ting ser ut og hvordan brukeren opplever løsningen. Hun liker å kombinere estetikk med funksjonalitet gjennom å undersøke brukeropplevelsen fra start til slutt. På denne måten lager hun noe som både er fint, forståelig og brukervennlig. Gjennom tidligere arbeidsroller som studentmentor og vitenskapelig assistent ved UiA, og intern på IT avdelingen i Flekkefjord Sparebank har Silje opparbeidet seg verdifull erfaring med både problemløsning, kommunikasjon og programmering. Silje mener at en tydelig struktur og god kommunikasjon er nøkkelen til å gjennomføre et godt prosjekt.</p>
            <ul class="facts">
-               <li>Teknologi: C#, HTML, Python, SQL, UX-design, Git, Github, Microsoft. </li>
-               <li>Erfaring: Vitenskapelig assistent og studentmentor ved institutt for informasjonssystemer, Intern på IT-avdelingen i Flekkefjord Sparebank, Praktikant som utvikler hos Phonero, Bachelor som barnehagelærer.</li>
-               <li>Valgfag: IS-218 Geografiske informasjonssystemer, IS-217 Universell Utforming av Informasjonssystemer, IS-214 Information System Security, TFL-129 Innføringsemne for Studentmentorer.</li>
+               <li><strong>Teknologi:</strong> C#, HTML, Python, SQL, UX-design, Git, Github, Microsoft. </li>
+               <li><strong>Erfaring:</strong> Vitenskapelig assistent og studentmentor ved institutt for informasjonssystemer, Intern på IT-avdelingen i Flekkefjord Sparebank, Praktikant som utvikler hos Phonero, Bachelor som barnehagelærer.</li>
+               <li><strong>Valgfag:</strong> IS-218 Geografiske informasjonssystemer, IS-217 Universell Utforming av Informasjonssystemer, IS-214 Information System Security, TFL-129 Innføringsemne for Studentmentorer.</li>
            </ul>
        </div>
      </article>
@@ -596,7 +704,7 @@
            <a class="social-link linkedin" href="https://www.linkedin.com/in/jihyung-choi-49611b42b/" target="_blank" rel="noreferrer" aria-label="LinkedIn for Jihyung Choi">
              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.94 8.5A1.56 1.56 0 1 1 6.93 5.4a1.56 1.56 0 0 1 .01 3.1ZM5.5 9.78h2.9v8.72H5.5V9.78Zm4.82 0h2.77v1.18h.04c.39-.73 1.33-1.5 2.73-1.5 2.92 0 3.46 1.92 3.46 4.42v6.62h-2.9v-6.2c0-1.48-.03-3.38-2.06-3.38-2.07 0-2.39 1.61-2.39 3.27v6.31h-2.9V9.78Z"/></svg>
            </a>
-           <a class="social-link github" href="https://github.com/" target="_blank" rel="noreferrer" aria-label="GitHub-profil for Jihyung Choi">
+           <a class="social-link github" href="https://github.com/jihyung-choi" target="_blank" rel="noreferrer" aria-label="GitHub-profil for Jihyung Choi">
              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2C6.48 2 2 6.58 2 12.22c0 4.5 2.87 8.32 6.84 9.67.5.1.68-.22.68-.49v-1.7c-2.78.62-3.37-1.36-3.37-1.36-.46-1.2-1.11-1.52-1.11-1.52-.9-.63.07-.62.07-.62 1 .07 1.53 1.04 1.53 1.04.89 1.56 2.34 1.11 2.91.85.09-.66.35-1.11.63-1.37-2.22-.26-4.56-1.15-4.56-5.12 0-1.13.39-2.05 1.03-2.77-.1-.26-.45-1.32.1-2.75 0 0 .84-.27 2.75 1.05A9.35 9.35 0 0 1 12 6.84c.85 0 1.71.12 2.51.36 1.9-1.32 2.74-1.05 2.74-1.05.56 1.43.21 2.49.11 2.75.64.72 1.03 1.64 1.03 2.77 0 3.98-2.35 4.85-4.58 5.11.36.32.68.96.68 1.94v2.87c0 .27.18.6.69.49A10.23 10.23 0 0 0 22 12.22C22 6.58 17.52 2 12 2Z"/></svg>
            </a>
          </div>
@@ -604,10 +712,10 @@
        <div class="member-details">
          <p class="bio">Jihyung (Ji) Choi er 22 år fra Kristiansand. Hun er interessert i full-stack-utvikling, brukeropplevelse og design. Hun liker å utvikle digitale løsninger som kombinerer funksjonalitet med et godt visuelt uttrykk. Gjennom studiene har hun fått erfaring med programmering, webutvikling og prosjektarbeid. Våren 2026 var hun utvekslingsstudent ved Chung-Ang University i Sør-Korea, hvor hun deltok aktivt i flere studentorganisasjoner. Gjennom BDAI fikk hun praktisk erfaring med SQL og dataanalyse, i MUSE lærte hun gitar og trommer og spilte i band, og i Korea Club var hun assistent og bidro til språk- og kulturutveksling med studenter fra ulike land. </p>
          <ul class="facts">
-           <li>Teknologi: C#, HTML, CSS, JavaScript, Python, SQL, Git, GitHub, UX-design</li>
-           <li>Erfaring: Webutviklingsprosjekt ved Universitet i Agder med Kartverket, teamprosjekter innen systemutvikling og databasearbeid, praktisk erfaring med SQL- og dataanalyse gjennom BDAI, frivillig assistent i Korea Club med språk- og kulturutveksling, samt bandmedlem i MUSE.</li>
-           <li>Valgfag: DAT-104 Multimediedesign.</li>
-           <li>Utveksling: Chung-Ang University, Seoul, Sør-Korea.</li>
+           <li><strong>Teknologi:</strong> C#, HTML, CSS, JavaScript, Python, SQL, Git, GitHub, UX-design</li>
+           <li><strong>Erfaring:</strong> Webutviklingsprosjekt ved Universitet i Agder med Kartverket, teamprosjekter innen systemutvikling og databasearbeid, praktisk erfaring med SQL- og dataanalyse gjennom BDAI, frivillig assistent i Korea Club med språk- og kulturutveksling, samt bandmedlem i MUSE.</li>
+           <li><strong>Valgfag:</strong> DAT-104 Multimediedesign.</li>
+           <li><strong>Utveksling:</strong> Chung-Ang University, Seoul, Sør-Korea.</li>
               
          </ul>
        </div>
@@ -625,7 +733,7 @@
            <a class="social-link linkedin" href="https://www.linkedin.com/in/filip-edvardsen-554334406/" target="_blank" rel="noreferrer" aria-label="LinkedIn for Filip Edvardsen">
              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.94 8.5A1.56 1.56 0 1 1 6.93 5.4a1.56 1.56 0 0 1 .01 3.1ZM5.5 9.78h2.9v8.72H5.5V9.78Zm4.82 0h2.77v1.18h.04c.39-.73 1.33-1.5 2.73-1.5 2.92 0 3.46 1.92 3.46 4.42v6.62h-2.9v-6.2c0-1.48-.03-3.38-2.06-3.38-2.07 0-2.39 1.61-2.39 3.27v6.31h-2.9V9.78Z"/></svg>
            </a>
-           <a class="social-link github" href="https://github.com/" target="_blank" rel="noreferrer" aria-label="GitHub-profil for Filip Edvardsen">
+           <a class="social-link github" href="https://github.com/filipedv" target="_blank" rel="noreferrer" aria-label="GitHub-profil for Filip Edvardsen">
              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2C6.48 2 2 6.58 2 12.22c0 4.5 2.87 8.32 6.84 9.67.5.1.68-.22.68-.49v-1.7c-2.78.62-3.37-1.36-3.37-1.36-.46-1.2-1.11-1.52-1.11-1.52-.9-.63.07-.62.07-.62 1 .07 1.53 1.04 1.53 1.04.89 1.56 2.34 1.11 2.91.85.09-.66.35-1.11.63-1.37-2.22-.26-4.56-1.15-4.56-5.12 0-1.13.39-2.05 1.03-2.77-.1-.26-.45-1.32.1-2.75 0 0 .84-.27 2.75 1.05A9.35 9.35 0 0 1 12 6.84c.85 0 1.71.12 2.51.36 1.9-1.32 2.74-1.05 2.74-1.05.56 1.43.21 2.49.11 2.75.64.72 1.03 1.64 1.03 2.77 0 3.98-2.35 4.85-4.58 5.11.36.32.68.96.68 1.94v2.87c0 .27.18.6.69.49A10.23 10.23 0 0 0 22 12.22C22 6.58 17.52 2 12 2Z"/></svg>
            </a>
          </div>
@@ -633,9 +741,9 @@
        <div class="member-details">
            <p class="bio">Filip Edvardsen er 22 år, fra Porsgrunn, og har erfaring innen backend-utvikling, systemarkitektur og databasehåndtering. Han er opptatt av hvordan systemer bygges opp, og liker å forstå hvordan arkitektur og datastrukturer henger sammen. Han er også interessert i hvordan KI kan utnyttes i systemutvikling. Ved siden av studiene jobber Filip som teknisk support hos GlobalConnect, og er denne høsten i praksis hos IK Start hvor han utvikler en ernæringsapplikasjon for klubbens akademispillere. Gjennom disse rollene, samt et webapplikasjonsprosjekt hos Kartverket i 3. semester, har han opparbeidet seg solid erfaring med både problemløsning, kommunikasjon og programmering.</p>
            <ul class="facts">
-               <li>Teknologi: C#, .NET, SQL, Python, TypeScript, JavaScript, Docker, GitHub.</li>
-               <li>Erfaring: Teknisk support hos GlobalConnect, praksis hos IK Start, webapplikasjonsprosjekt hos Kartverket.</li>
-               <li>Utveksling: Vysoká škola ekonomická v Praze, Faculty of Informatics and Statistics.</li>
+               <li><strong>Teknologi:</strong> C#, .NET, SQL, Python, TypeScript, JavaScript, Docker, GitHub.</li>
+               <li><strong>Erfaring:</strong> Teknisk support hos GlobalConnect, praksis hos IK Start, webapplikasjonsprosjekt hos Kartverket.</li>
+               <li><strong>Utveksling:</strong> Vysoká škola ekonomická v Praze, Faculty of Informatics and Statistics.</li>
            </ul>
        </div>
      </article>
@@ -652,7 +760,7 @@
            <a class="social-link linkedin" href="https://www.linkedin.com/in/%C3%B8yvind-birkeland-87302531a/" target="_blank" rel="noreferrer" aria-label="LinkedIn for Øyvind Birkeland">
              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.94 8.5A1.56 1.56 0 1 1 6.93 5.4a1.56 1.56 0 0 1 .01 3.1ZM5.5 9.78h2.9v8.72H5.5V9.78Zm4.82 0h2.77v1.18h.04c.39-.73 1.33-1.5 2.73-1.5 2.92 0 3.46 1.92 3.46 4.42v6.62h-2.9v-6.2c0-1.48-.03-3.38-2.06-3.38-2.07 0-2.39 1.61-2.39 3.27v6.31h-2.9V9.78Z"/></svg>
            </a>
-           <a class="social-link github" href="https://github.com/" target="_blank" rel="noreferrer" aria-label="GitHub-profil for Øyvind Birkeland">
+           <a class="social-link github" href="https://github.com/OyvindBirkeland" target="_blank" rel="noreferrer" aria-label="GitHub-profil for Øyvind Birkeland">
              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2C6.48 2 2 6.58 2 12.22c0 4.5 2.87 8.32 6.84 9.67.5.1.68-.22.68-.49v-1.7c-2.78.62-3.37-1.36-3.37-1.36-.46-1.2-1.11-1.52-1.11-1.52-.9-.63.07-.62.07-.62 1 .07 1.53 1.04 1.53 1.04.89 1.56 2.34 1.11 2.91.85.09-.66.35-1.11.63-1.37-2.22-.26-4.56-1.15-4.56-5.12 0-1.13.39-2.05 1.03-2.77-.1-.26-.45-1.32.1-2.75 0 0 .84-.27 2.75 1.05A9.35 9.35 0 0 1 12 6.84c.85 0 1.71.12 2.51.36 1.9-1.32 2.74-1.05 2.74-1.05.56 1.43.21 2.49.11 2.75.64.72 1.03 1.64 1.03 2.77 0 3.98-2.35 4.85-4.58 5.11.36.32.68.96.68 1.94v2.87c0 .27.18.6.69.49A10.23 10.23 0 0 0 22 12.22C22 6.58 17.52 2 12 2Z"/></svg>
            </a>
          </div>
@@ -660,10 +768,10 @@
        <div class="member-details">
            <p class="bio">Øyvind er 24 år, fra Arendal, og har erfaring innen backend-utvikling, databaser og problemløsing. Han er nyskjerrig og opptatt av hvordan ting fungerer og at programmet fungerer optimalt. Øyvind liker å bryte ned komplekse utfordringer til mindre deler før han finner den beste løsningen. Gjennom utveksling i Praha våren 2026 har han også fått erfaring med internasjonalt samarbeid og ulike arbeidsmetoder. Hørsten 2026 er han praktikant hos IK Start hvor han jobber sammen med et team med fokus på applikasjonsutvikling. Han har erfaring med KI og legger vekt på viktigheten av riktig bruk av diverse språkodeller.</p>
            <ul class="facts">
-               <li>Teknologi: C#, Python, SQL, Git, Github, Microsoft, .Net.</li>
-               <li>Erfaring: Praksis hos IK start.</li>
-               <li>Valgfag: IKT-115 Introduksjon til kunstig intelligens-teknologi.</li>
-               <li>Utveksling: Vysoká škola ekonomická v Praze, Faculty of Informatics and Statistics.</li>
+               <li><strong>Teknologi:</strong> C#, Python, SQL, Git, Github, Microsoft, .Net.</li>
+               <li><strong>Erfaring:</strong> Praksis hos IK start.</li>
+               <li><strong>Valgfag:</strong> IKT-115 Introduksjon til kunstig intelligens-teknologi.</li>
+               <li><strong>Utveksling:</strong> Vysoká škola ekonomická v Praze, Faculty of Informatics and Statistics.</li>
            </ul>
        </div>
      </article>
@@ -671,20 +779,44 @@
    </div>
  </section>
 
-<!-- Ta Kontakt  -->
-  <footer id="kontakt">
-    <p class="section-label">Ta Kontakt</p>
-    <p>Har du spørsmål eller ønsker en prat? Ikke nøl med å ta kontakt med oss!</p>
-    <div class="contact-line">
-      <span>Ida Elise Jamissen — <a href="mailto:iejamissen@uia.no">iejamissen@uia.no</a></span>
-      <span>Sivert Dørum — <a href="mailto:sivertdorum@gmail.com">sivertdorum@gmail.com</a></span>
-      <span>Silje Solberg — <a href="mailto:siljeso@uia.no">siljeso@uia.no</a></span>
-      <span>Jihyung Choi — <a href="mailto:jihyungc@uia.no">jihyungc@uia.no</a></span>
-      <span>Filip Edvardsen — <a href="mailto:filiped@uia.no">filiped@uia.no</a></span>
-      <span>Øyvind Birkeland — <a href="mailto:oyvindbirkeland0@gmail.com">oyvindbirkeland0@gmail.com</a></span>
-    </div>
-  </footer>
 
+<!-- Video  -->
+ <section id="video">
+   <p class="section-label">Videopresentasjon</p>
+   <h2>Bli kjent med gruppa!</h2>
+   <div class="video-wrap">
+     <iframe
+       src="https://www.youtube.com/embed/SopytARRfd0?rel=0"
+       title="Video om IS-310 prosjektet"
+       loading="lazy"
+       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+       referrerpolicy="strict-origin-when-cross-origin"
+       allowfullscreen>
+     </iframe>
+   </div>
+ </section>
+
+ <section class="contact-band" id="kontakt">
+   <div class="contact-inner">
+     <h2 class="lead"><center>Ta kontakt om du har noen spørsmål!</center></h2>
+     <div class="primary-list">
+       <div class="primary-contact"><span class="label"><strong>Primærkontakt -</strong></span> Ida Elise Jamissen: <a href="mailto:iejamissen@uia.no">iejamissen@uia.no</a></div>
+     <div class="contact-list"> 
+       <div class="contact-item">Sivert Dørum: <a href="mailto:sivertdorum@gmail.com">sivertdorum@gmail.com</a></div>
+       <div class="contact-item">Silje Solberg: <a href="mailto:siljeso@uia.no">siljeso@uia.no</a></div>
+       <div class="contact-item">Jihyung Choi: <a href="mailto:jihyungc@uia.no">jihyungc@uia.no</a></div>
+       <div class="contact-item">Filip Edvardsen: <a href="mailto:filiped@uia.no">filiped@uia.no</a></div>
+       <div class="contact-item">Øyvind Birkeland: <a href="mailto:oyvindbirkeland0@gmail.com">oyvindbirkeland0@gmail.com</a></div>
+     </div>
+   </div>
+ </section>
+
+ <footer class="site-footer" aria-label="Footer">
+   <div class="nav-inner">
+     <a href="#top" class="brand" aria-label="IS-310">IS-310</a>
+     <span class="footer-text">Gruppe 11</span>
+   </div>
+ </footer>
 </div>
 
 </body>
