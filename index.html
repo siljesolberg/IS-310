@@ -179,7 +179,7 @@
 
   .section-label{
     font-family: 'Space Mono', monospace;
-    font-size: 0.75rem;
+    font-size: 0.8rem;
     letter-spacing: 0.12em;
     text-transform: uppercase;
     color: var(--primary);
@@ -423,51 +423,41 @@
     font-size: 0.95rem;
   }
 
-  .contact-band{
-    background: #ffffff;
-    color: var(--text);
-    padding: 60px 0 70px;
-    border-top: 1px solid var(--line);
-  }
+  /* ta kontakt */
 
-  .contact-band .contact-inner{
-    max-width: 1040px;
-    margin: 0 auto;
-    padding: 0 28px;
-  }
-
-  .contact-band .section-label{
-    color: var(--primary);
-    margin-bottom: 18px;
-  }
-
-  .contact-band .section-label::after{
-    background: var(--line);
-  }
-
-  .contact-band .lead {
-    margin: 0 0 20px;
-    color: var(--text-muted);
-    font-size: 1.05rem;
-  }
-
-  .contact-band .contact-list {
+/* kontakt-liste format primær*/
+  .contact-band .primary-list {
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: column;
     align-items: center;
     gap: 12px 18px;
     font-family: 'Space Mono', monospace;
     font-size: 0.9rem;
   }
 
-  
+/* kontakt-liste format sekundær */
+    .contact-band .contact-list {
+    display: flex;
+    flex-direction: center;
+    align-items: center;
+    gap: 12px 18px;
+    font-family: 'Space Mono', monospace;
+    font-size: 0.8rem;
+  }
 
+  /* primærkontakt-boks */
+  .contact-band .contact-item,
+  .contact-band .primary-contact {
+    color: var(--text);
+  }
+
+  /* primærkontakt-boks stil */
   .contact-band .primary-contact {
     display: inline-flex;
     align-items: center;
     flex-wrap: wrap;
     gap: 8px;
-    padding: 10px 18px;
+    padding: 20px 100px;
     border-radius: 999px;
     background: rgba(46, 139, 87, 0.08);
     border: 1px solid var(--line-strong);
@@ -476,23 +466,8 @@
     box-shadow: 0 8px 18px rgba(30, 94, 59, 0.08);
   }
 
-  .contact-band .label {
-    display: inline-block;
-    padding: 5px 8px;
-    border-radius: 999px;
-    background: var(--primary);
-    color: #ffffff;
-    font-size: 0.68rem;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-  }
 
-  .contact-band a {
-    color: var(--primary);
-    text-decoration: none;
-    border-bottom: 1px solid var(--line-strong);
-  }
-
+  /* footer */
   .site-footer{
     width: 100vw;
     margin-left: calc(50% - 50vw);
@@ -817,15 +792,15 @@
 
  <section class="contact-band" id="kontakt">
    <div class="contact-inner">
-     <p class="section-label">Ta kontakt</p>
-     <p class="lead">Har du spørsmål eller ønsker en prat? Ikke nøl med å ta kontakt med oss!</p>
-     <div class="contact-list">
-       <div class="primary-contact"><span class="label">Primærkontakt</span> Ida Elise Jamissen — <a href="mailto:iejamissen@uia.no">iejamissen@uia.no</a></div>
-       <div class="contact-item">Sivert Dørum — <a href="mailto:sivertdorum@gmail.com">sivertdorum@gmail.com</a></div>
-       <div class="contact-item">Silje Solberg — <a href="mailto:siljeso@uia.no">siljeso@uia.no</a></div>
-       <div class="contact-item">Jihyung Choi — <a href="mailto:jihyungc@uia.no">jihyungc@uia.no</a></div>
-       <div class="contact-item">Filip Edvardsen — <a href="mailto:filiped@uia.no">filiped@uia.no</a></div>
-       <div class="contact-item">Øyvind Birkeland — <a href="mailto:oyvindbirkeland0@gmail.com">oyvindbirkeland0@gmail.com</a></div>
+     <h2 class="lead"><center>Ta kontakt om du har noen spørsmål!</center></h2>
+     <div class="primary-list">
+       <div class="primary-contact"><span class="label"><strong>Primærkontakt -</strong></span> Ida Elise Jamissen: <a href="mailto:iejamissen@uia.no">iejamissen@uia.no</a></div>
+     <div class="contact-list"> 
+       <div class="contact-item">Sivert Dørum: <a href="mailto:sivertdorum@gmail.com">sivertdorum@gmail.com</a></div>
+       <div class="contact-item">Silje Solberg: <a href="mailto:siljeso@uia.no">siljeso@uia.no</a></div>
+       <div class="contact-item">Jihyung Choi: <a href="mailto:jihyungc@uia.no">jihyungc@uia.no</a></div>
+       <div class="contact-item">Filip Edvardsen: <a href="mailto:filiped@uia.no">filiped@uia.no</a></div>
+       <div class="contact-item">Øyvind Birkeland: <a href="mailto:oyvindbirkeland0@gmail.com">oyvindbirkeland0@gmail.com</a></div>
      </div>
    </div>
  </section>
