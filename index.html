@@ -55,7 +55,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 1px;
+    gap: 24px;
   }
 
   .top-nav .brand{
@@ -65,10 +65,11 @@
     color: #ffffff;
     text-decoration: none;
     font-family: 'Space Mono', monospace;
-    font-size: 1.1rem;
+    font-size: 1rem;
     text-transform: uppercase;
     letter-spacing: 0.08em;
     font-weight: 700;
+    white-space: nowrap;
   }
 
   .top-nav ul{
@@ -78,13 +79,14 @@
     display: flex;
     align-items: center;
     justify-content: flex-end;
-    gap: 38px;
-    flex-wrap: wrap;
+    gap: 24px;
+    flex-wrap: nowrap;
+    margin-left: auto;
   }
 
   .top-nav a{
     font-family: 'Space Mono', monospace;
-    font-size: 0.92rem;
+    font-size: 0.82rem;
     text-transform: uppercase;
     letter-spacing: 0.08em;
     text-decoration: none;
@@ -127,7 +129,7 @@
   z-index: 1;
   width: min(100%, 1040px);
   margin: 0 auto;
-  padding: 20px 28px 10px;
+  padding: 20px 12px 10px;
   text-align: center;
 }
 
@@ -150,11 +152,11 @@
   }
 
   .subtitle{
-    max-width: 850px;
+    width: 100%;
+    max-width: none;
     margin: 0 auto;
     font-size: 1.2rem;
     color: #111111;
-    margin: 0 0 0 -28px;
   }
 
   .stamp{ display: none; }
@@ -556,7 +558,7 @@
   }
 
   .cover-content{
-    padding: 20px 16px;
+    padding: 20px 10px;
   }
 
   .subtitle{
@@ -724,19 +726,22 @@
 
 <!-- meny -->
   <nav class="top-nav" aria-label="Hovedmeny">
-  <div class="nav-inner">
-    <a href="#top" aria-label
+    <div class="nav-inner">
+      <a href="#top" class="brand" aria-label="IS-310 Gruppe 11">
+        IS 310 - Gruppe 11
+      </a>
 
-    <button class="menu-toggle" id="menu-btn" aria-label="Open menu">
-      ☰
-    </button>
+      <button class="menu-toggle" id="menu-btn" aria-label="Open menu">
+        ☰
+      </button>
 
-    <ul id="nav-links">
-      <li><a href="#om">Om gruppen</a></li>
-      <li><a href="#medlemmer">Medlemmer</a></li>
-      <li><a href="#video">Videopresentasjon</a></li>
-      <li><a href="#kontakt">Ta kontakt</a></li>
-  </div>
+      <ul id="nav-links">
+        <li><a href="#om">Om gruppen</a></li>
+        <li><a href="#medlemmer">Medlemmer</a></li>
+        <li><a href="#video">Videopresentasjon</a></li>
+        <li><a href="#kontakt">Ta kontakt</a></li>
+      </ul>
+    </div>
   </nav>
 
 <div class="wrap">
