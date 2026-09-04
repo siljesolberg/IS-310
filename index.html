@@ -55,7 +55,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 20px;
+    gap: 1px;
   }
 
   .top-nav .brand{
@@ -98,6 +98,15 @@
     border-bottom-color: #e0f2fe;
   }
 
+  .menu-toggle{
+    display:none;
+    background:none;
+    border:none;
+    color:white;
+    font-size:1.8rem;
+    cursor:pointer;
+    padding:0;
+}
 .cover {
   position: relative;
   width: 100vw;
@@ -141,8 +150,8 @@
   }
 
   .subtitle{
-    width: calc(100% + 56px);
-    max-width: none;
+    max-width: 850px;
+    margin: 0 auto;
     font-size: 1.2rem;
     color: #111111;
     margin: 0 0 0 -28px;
@@ -516,50 +525,193 @@
 
   }
 
-  @media (max-width: 560px){
-    .nav-inner{
-      flex-direction: column;
-      align-items: flex-start;
-    }
+  @media (max-width: 980px){
 
-    .top-nav ul{
-      width: 100%;
-      justify-content: flex-start;
-      gap: 14px;
-      padding: 0;
-    }
-
-    .top-nav a{
-      font-size: 0.8rem;
-      letter-spacing: 0.06em;
-    }
-
-    .members-grid{
-      grid-template-columns: 1fr;
-      gap: 16px;
-    }
-
-    .card{
-      grid-template-columns: 1fr;
-      min-height: 0;
-      padding: 28px 22px;
-    }
-
-    .card .avatar{
-      width: 160px;
-      height: 160px;
-    }
-
-    .member-intro{
-      width: 100%;
-    }
-
-    .tl-item{ grid-template-columns: 72px 16px 1fr; }
+  .card{
+    grid-template-columns: 190px minmax(0, 1fr);
+    gap: 26px;
   }
 
-  @media (prefers-reduced-motion: reduce){
-    html{ scroll-behavior: auto; }
+  .card .avatar{
+    width: 150px;
+    height: 150px;
   }
+}
+
+@media (max-width: 768px){
+
+  html,
+  body{
+    overflow-x: hidden;
+  }
+
+  .wrap{
+    padding: 0 16px;
+  }
+
+  /* HERO */
+
+  .cover-banner{
+    height: 220px;
+  }
+
+  .cover-content{
+    padding: 20px 16px;
+  }
+
+  .subtitle{
+    max-width: 100%;
+    margin: 0 auto;
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+
+  /* NAVIGATION */
+
+  .menu-toggle{
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    color: #ffffff;
+    text-decoration: none;
+    font-family: 'Space Mono', monospace;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    font-weight: 700;
+    margin-left: auto;
+  }
+
+  .top-nav .nav-inner{
+    flex-wrap: wrap;
+  }
+
+  .top-nav ul{
+    display: none;
+    width: 100%;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+    margin-top: 14px;
+    padding-top: 0px;
+    border-top: 1px solid rgba(255,255,255,.2);
+  }
+
+  .top-nav ul.active{
+    display: flex;
+  }
+
+  .top-nav li{
+    width: 100%;
+  }
+
+  .top-nav a{
+    font-size: 0.85rem;
+  }
+
+  /* MEMBER CARDS */
+
+  .card{
+    grid-template-columns: 1fr;
+    text-align: center;
+    padding: 24px;
+    gap: 20px;
+  }
+
+  .member-intro{
+    width: 100%;
+  }
+
+  .member-details{
+    text-align: left;
+  }
+
+  .card .avatar{
+    width: 140px;
+    height: 140px;
+    margin: 0 auto 16px;
+  }
+
+  .card h3{
+    font-size: 1.4rem;
+  }
+
+  .card .bio{
+    font-size: 1rem;
+  }
+
+  .card .facts{
+    font-size: 0.95rem;
+  }
+
+  /* TIMELINE */
+
+  .tl-item{
+    grid-template-columns: 70px 20px 1fr;
+  }
+
+  /* CONTACT */
+
+  .contact-band .primary-contact{
+    width: 100%;
+    max-width: 100%;
+    justify-content: center;
+    text-align: center;
+    padding: 18px 24px;
+  }
+
+  .contact-band .contact-list{
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  /* FOOTER */
+
+  .site-footer .nav-inner{
+    flex-direction: column;
+    text-align: center;
+    gap: 10px;
+  }
+}
+
+@media (max-width: 480px){
+
+  .cover-banner{
+    height: 180px;
+  }
+
+  h1.title{
+    font-size: 2.2rem;
+    line-height: 1;
+  }
+
+  .subtitle{
+    font-size: 0.95rem;
+  }
+
+  .card{
+    padding: 18px;
+  }
+
+  .card .avatar{
+    width: 120px;
+    height: 120px;
+  }
+
+  .top-nav .nav-inner{
+    padding: 14px 16px;
+  }
+
+  .site-footer .nav-inner{
+    padding: 14px 16px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce){
+  html{
+    scroll-behavior: auto;
+  }
+}
 
   :focus-visible{
     outline: 2px solid var(--primary);
@@ -572,17 +724,19 @@
 
 <!-- meny -->
   <nav class="top-nav" aria-label="Hovedmeny">
-    <div class="nav-inner">
-      <a href="#top" class="brand" aria-label="IS-310">
-        <span>IS-310</span>
-      </a>
-      <ul>
-        <li><a href="#om">Om gruppen</a></li>
-        <li><a href="#medlemmer">Medlemmer</a></li>
-        <li><a href="#video">Videopresentasjon</a></li>
-        <li><a href="#kontakt">Ta kontakt</a></li>
-      </ul>
-    </div>
+  <div class="nav-inner">
+    <a href="#top" aria-label
+
+    <button class="menu-toggle" id="menu-btn" aria-label="Open menu">
+      ☰
+    </button>
+
+    <ul id="nav-links">
+      <li><a href="#om">Om gruppen</a></li>
+      <li><a href="#medlemmer">Medlemmer</a></li>
+      <li><a href="#video">Videopresentasjon</a></li>
+      <li><a href="#kontakt">Ta kontakt</a></li>
+  </div>
   </nav>
 
 <div class="wrap">
@@ -819,5 +973,25 @@
  </footer>
 </div>
 
+<script>
+  const menuBtn = document.getElementById('menu-btn');
+  const navLinks = document.getElementById('nav-links');
+
+  if(menuBtn && navLinks){
+
+    menuBtn.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
+    });
+
+    navLinks.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        navLinks.classList.remove('active');
+      });
+    });
+
+  }
+</script>
 </body>
+
+
 </html>
