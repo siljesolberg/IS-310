@@ -128,14 +128,14 @@
   position: relative;
   z-index: 1;
   width: min(100%, 1040px);
-  margin: 0 auto;
+  margin: auto;
   padding: 20px 12px 10px;
   text-align: center;
 }
 
   .eyebrow{
     font-family: 'Space Mono', monospace;
-    font-size: 0.78rem;
+    font-size: 0.70rem;
     letter-spacing: 0.14em;
     text-transform: uppercase;
     color: var(--primary);
@@ -163,6 +163,10 @@
 
   section{ padding: 64px 0; }
   section + section{ border-top: 1px solid var(--line); }
+  #ambisjoner + #video{ border-top: 0; }
+  #video + #medlemmer{ border-top: 0; }
+  #ambisjoner{ padding-bottom: 18px; }
+  #video{ padding-top: 18px; }
   section, footer{ scroll-margin-top: 78px; }
 
   .video-section {
@@ -217,6 +221,10 @@
   .about p{ max-width: 680px; color: var(--text-muted); }
   .about ul{ max-width: 680px; padding-left: 22px; color: var(--text-muted); }
   .about li{ margin-bottom: 6px; }
+
+  #ambisjoner > p:not(.section-label){
+    font-size: 1.2rem;
+  }
 
   .members-grid{
     display: grid;
@@ -737,8 +745,8 @@
 
       <ul id="nav-links">
         <li><a href="#om">Om gruppen</a></li>
-        <li><a href="#medlemmer">Medlemmer</a></li>
         <li><a href="#video">Videopresentasjon</a></li>
+        <li><a href="#medlemmer">Medlemmer</a></li>
         <li><a href="#kontakt">Ta kontakt</a></li>
       </ul>
     </div>
@@ -755,12 +763,42 @@
      <h1 class="title">Gruppe 21</h1>
      <p class="subtitle">
           Vi er gruppe 21 og jobber sammen for å utvikle brukervennlige og gjennomtenkte løsninger!
-      <br>Gruppen kombinerer ulike ferdigheter og perspektiver, og legger vekt på godt samarbeid og problemløsning
-      <br>og ønsker derforet prosjekt hvor vi kan utfolde og utforde oss som gruppe og som individer. 
+      <br>Gruppen kombinerer ulike ferdigheter og perspektiver, og legger vekt på godt samarbeid og 
+      <br>problemløsning og ønsker derforet prosjekt hvor vi kan utforde oss som gruppe og som individer. 
       <br>Vi er først og fremt studenter og satser vår fulle oppmerksomhet til gjennomnføringen av bachelorprosjektet!
     </p>
    </div>
  </header>
+
+  <!-- Ambisjoner -->
+   <section id="ambisjoner">
+   
+ <p class="section-label">Ambisjoner</p>
+ <h2>Vårt ambisjonsnivå</h2>
+ <p>
+Vi har et høyt ambisjonsnivå og er en dedikert gruppe som ønsker å levere arbeid av høy kvalitet. Vi er opptatt av å være 
+grundige, samarbeide godt og ta ansvar for prosjektets oppgaver gjennom hele prosessen. Som gruppe ønsker vi å bygge videre på de gode 
+resultatene vi har oppnådd tidligere, og har som mål å opprettholde vårt faglige nivå og toppkarakterer. Samtidig ønsker 
+vi å bruke prosjektet som en mulighet til å utvikle oss videre. Vi vil derfor sette oss tydelige mål, gi hverandre konstruktive 
+tilbakemeldinger og kontinuerlig jobbe for å forbedre sluttresultatet. 
+ </p>
+  </section>
+
+ <!-- Video  -->
+ <section id="video">
+   <p class="section-label">Videopresentasjon</p>
+   <h2>Bli kjent med gruppa!</h2>
+   <div class="video-wrap">
+     <iframe
+       src="https://www.youtube.com/embed/Gc1EgIeaeOY"
+       title="Video om IS-310 prosjektet"
+       loading="lazy"
+       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+       referrerpolicy="strict-origin-when-cross-origin"
+       allowfullscreen>
+     </iframe>
+   </div>
+ </section>
 
 
  <!-- Gruppemedlemmer -->
@@ -938,22 +976,6 @@
    </div>
  </section>
 
-
-<!-- Video  -->
- <section id="video">
-   <p class="section-label">Videopresentasjon</p>
-   <h2>Bli kjent med gruppa!</h2>
-   <div class="video-wrap">
-     <iframe
-       src="https://www.youtube.com/embed/Gc1EgIeaeOY"
-       title="Video om IS-310 prosjektet"
-       loading="lazy"
-       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-       referrerpolicy="strict-origin-when-cross-origin"
-       allowfullscreen>
-     </iframe>
-   </div>
- </section>
 
  <section class="contact-band" id="kontakt">
    <div class="contact-inner">
